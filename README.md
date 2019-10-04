@@ -9,3 +9,4 @@
 - [ ] Create different scripts for different OSs and to quickly create / download a rice configuration
 - [ ] Take a look at grub boot manager (there is an example in one of my stars)
 - [ ] Consider how to be able to switch between different window managers and/or dotfile configs more easily.
+- [ ] set vim to use 'jkl;' rather than 'hjkl'
