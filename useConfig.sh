@@ -1,1 +1,2 @@
-cp -r dotfiles/.config/ ~
+cp -r .config/ ~
+cp .Xresources ~

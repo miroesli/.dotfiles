@@ -9,7 +9,10 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# Variables
 set $mod Mod1
+set $wallpaper "~/Pictures/wallpapers/abstract.jpg"
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -34,6 +37,7 @@ exec --no-startup-id nm-applet
 # Other Execs
 # exec --no-startup-id run_keybase
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id sh -c "~/dotfiles/wallblur.sh &"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -134,6 +138,11 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
+# move workspace to another monitor
+
+bindsym $mod+Control+Left move workspace to output left
+bindsym $mod+Control+Right move workspace to output right
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -188,11 +197,5 @@ bar {
 }
 
 #set gaps
-gaps inner 7
-gaps outer 7
-gaps horizontal 0
-gaps vertical 0
-gaps top 0
-gaps right 0
-gaps bottom 0
-gaps left 0
+gaps inner 10
+gaps outer 10
