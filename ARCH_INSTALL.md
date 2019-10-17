@@ -445,3 +445,45 @@ Need to figure out how to get the EFI to detect things on another repo.
 Best solution thus far is in this thread [here](https://www.reddit.com/r/archlinux/comments/7uox5m/multiple_efi_partitions/)
 
 Reset windows EFI: https://forums.tomshardware.com/faq/how-to-repair-efi-bootloader-in-windows-10.3275168/
+
+Other links: 
+
+https://bbs.archlinux.org/viewtopic.php?id=242010
+
+https://www.reddit.com/r/archlinux/comments/7uox5m/multiple_efi_partitions/
+
+If I were you, I would follow these steps:
+
+    Boot from an Arch live system
+
+    Mount your main system root to /mnt (mount /dev/sda2 /mnt)
+
+    Mount the EFI partition to /boot/efi (mount /dev/sda1 /mnt/boot/efi)
+
+    chroot to your main system root (arch-chroot /mnt)
+
+    Back up Microsoft/ directory from the EFI partition to a temporary location (cp -R /boot/efi/EFI/Microsoft/ /)
+
+    Uninstall grub (pacman -Rsn grub)
+
+    Empty the EFI partition (rm -R /boot/efi/*)
+
+    Install refind to the system (pacman -Syu refind-efi)
+
+    Install refind to the EFI (refind-install)
+
+    Move back the Microsoft/ directory you've previously backed up to /boot/efi/EFI/ (mv /Microsoft/ /boot/efi/EFI/)
+
+    ^D
+
+    reboot
+
+    Make sure everything boots up properly
+
+    Configure /boot/refind_linux.conf(current linux system startup options, i.e. add processor microcode to the kernel launch parameters or set up different startup configurations
+
+    ) and /boot/efi/EFI/refind/refind.conf(refind settings)
+
+P.S. Refind detects Linux systems automatically but doesn't do so for Windows, that's why we need to mess with the Microsoft/ dir
+
+https://ramsdenj.com/2016/04/15/multi-boot-linux-with-one-boot-partition.html
