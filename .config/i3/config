@@ -44,6 +44,7 @@ exec --no-startup-id compton -b
 
 # super keybinds
 bindsym $super+l exec i3lock -c 000000
+# bindsym $super+l exec slimlock
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
