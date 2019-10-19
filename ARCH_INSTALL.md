@@ -1,27 +1,39 @@
 # Arch Install
 
-## Steps
+You can also follow the installation instructions on the [Archlinux](https://wiki.archlinux.org/index.php/Installation_guide) website.
 
-### As base OS as shown [here](https://wiki.archlinux.org/index.php/Installation_guide)
+## Preparation
 
-When initially rebooting make sure secure boot is off, and fast shutodnw/boot is disabled as well. If it doesn't find a vmlinuz or loader.efi file then rename either file with the .efi suffix
+1.  [Download](https://archlinux.org/download/) ISO and GPG files (usually under Checksums)
 
-31.25 on c
-375 on d
+### On Windows
 
-#### Verify key for archlinux
-
+2. [Download](https://rufus.ie/) rufus
+3. Download [GnuPG](https://www.gnupg.org/download/index.html) and verify the signature using
 ```bash
-$ pacman-key -v archlinux-version-x86_64.iso.sig
+$ gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig
 ```
 
-#### Verify boot mode (only for UEFI)
+Alternatively, verify the authenticity of the signature by checking if the public key's fingerprint is identical to the key fingerprint of the [Arch Linux developer](https://www.archlinux.org/people/developers/) who signed it.
+
+3. Create a bootable usb by selecting the ISO in Rufus
+
+### On Linux
+
+2.  Verify the ISO file: `$ pacman-key -v archlinux-<version>.iso.sig`
+3.  Create a bootable usb with: `# dd if=archlinux*.iso of=/dev/sdX && sync`
+
+## Boot into your portable ARCH drive
+
+When initially rebooting make sure secure boot is off. If it doesn't find a vmlinuz or loader.efi file then attempt to rename either file with the .efi suffix/file type.
+
+1. Verify boot mode (only for UEFI)
 
 ```bash
 $ ls /sys/firmware/efi/efivars
 ```
 
-#### Connect to Internet
+2. Connect to Internet
 
 ```bash
 $ wifi-menu
@@ -35,7 +47,7 @@ Check connection with
 $ ping archlinux.org
 ```
 
-#### Set timedatectl
+3. Set timedatectl
 
 ```bash
 $ timedatectl set-ntp true
@@ -47,22 +59,22 @@ Check status with:
 $ timedatectl status
 ```
 
-#### Update Pacman databases
+4. Update Pacman databases
 
 ```bash
 $ pacman -Syy
 ```
 
-#### Configure mirror list using reflector
+5. Configure mirror list using reflector
 
 ```bash
 $ pacman -S reflector
 $ reflector -c "Country" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
 ```
 
-#### Partition the disk
+## Partition the disk
 
-Determine the disk drive you're partitioning using the command below.
+1. Determine the disk drive you're partitioning using the [command](https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools) below.
 
 ```bash
 $ lsblk
@@ -74,7 +86,7 @@ Alternatively
 $ fdisk -l
 ```
 
-check how much free space it has using gdisk -l /dev/sd`X` (replace x with the letter from any listed from the previous command.)
+2. Check how much free space it has using gdisk -l /dev/`diskname` (replace `diskname` with the disk you decided on from the previous command.)
 
 Start partitioning the disk drive that you determined above.
 
@@ -88,12 +100,12 @@ Alternatively
 $ cfdisk /dev/sdX
 ```
 
-Create your partitions as you would like. See the archlinux [installation guide]() for help on this.
+3. Create your partitions as you would like. See the archlinux [installation guide](https://wiki.archlinux.org/index.php/Partitioning) for help on this.
 
-##### Recommended method
+**Recommended method**
 
-Create a root partition of around 10GB
-Create an efi partition of around 500MB `Note: Only create this if you are not dual booting.`
+Create a root partition of around 10GB (Optional)
+Create an efi partition of around 512MB `Note: Only create this if you are not dual booting. Otherwise use the existing EFI in the other OS.`
 Create a swap partition between square root of RAM and double RAM. Usually equal to ram is fine. See [this link](https://itsfoss.com/swap-size/) for more info.
 Create your home partition with the rest of your memory.
 
@@ -104,7 +116,7 @@ $ cryptsetup luksFormat --type luks1 /dev/sdxY
 $ cryptsetup luksOpen /dev/sdxY luks
 ``` -->
 
-#### Format the partitions
+4. Format the partitions
 
 <!-- ##### For root drive
 
@@ -116,18 +128,15 @@ $ mkfs.btrfs -L btrfs /dev/mapper/luks
 
 Otherwise use this one. -->
 
-For root
+For root/home drives
 
 ```bash
 $ mkfs.ext4 -L "Arch Linux" /dev/sdxY # `-L "Arch Linux"` is optional
 ```
 
-<!-- #### Others -->
-
 For EFI
 
 Note: Only format this if you created a new EFI. 
-Note2: mkfs.fat and mkfs.vfat are the same command.
 
 ```bash
 $ mkfs.fat -F32 /dev/sdxY # May differ according to bootloader being used
@@ -146,7 +155,7 @@ Check if swap is enabled
 $ free -m
 ```
 
-#### Mount disk drives to system
+5. Mount disk drives to system
 
 For root
 
@@ -154,33 +163,33 @@ For root
 $ mount /dev/sdxY /mnt
 ```
 
-Mount any other partitions made here other than the efi and swap. Make sure to create their respective directories with mkdir.
+6. Mount any other partitions made here except `efi` and `swap` drives. Make sure to create their respective directories with mkdir. For example, this is when you would mount your home directory if you made a seperate one from the root.
 
-Note: For example, this is where you would mount your home directory if you made a seperate one from the root.
-
-Use the command below to check that everything was done correctly:
+7. Use the command below to check that everything was done correctly:
 
 ```bash
 $ df
 ```
 
-#### Proxy
+## Install Arch Linux
+
+1. Add proxy
 
 If behind a proxy you can configure an environment variable to send your packets through it.
 
-example; replace the ip and port accordingly
+example: replace the ip and port accordingly
 
 ```bash
 $ export http_proxy=http://10.1.33.241:3128 
 ```
 
-#### Install base system
+2. Install base system
 
 ```bash
 $ pacstrap /mnt base base-devel
 ```
 
-#### Mount efi now (only do this if dual booting)
+3. Mount efi now (only do this if dual booting)
 
 For EFI
 
@@ -191,38 +200,38 @@ $ mkdir /mnt/boot/efi
 $ mount /dev/sdxY /mnt/boot/efi (or /mnt/boot or /mnt/efi)
 ```
 
-#### Generate fstab
+4. Generate fstab
 
 ```bash
 $ genfstab -U /mnt >> /mnt/etc/fstab # optionally use -p instead of -U
 ```
 
-Check the output 
+5. Check the output 
 
 ```bash
 $ cat /mnt/etc/fstab
 ```
 
-#### login to newly created system
+6. login to newly created system
 
 ```bash
 $ arch-chroot /mnt [/bin/bash]
 ```
 
-#### Create a password
+7. Create a password
 
 ```bash
 $ passwd [...]
 ```
 
-#### Set Timezone
+8. Set Timezone
 
 ```bash
 $ ln -sf /usr/share/zoneinfo/Country/City /etc/localtime
 $ hwclock --systohc # optional, do this if the system clock doesn't update.
 ```
 
-#### Let us generate initial RAM disk (optional)
+9. Let us generate initial RAM disk (optional)
 
 Creating a new initramfs is usually not required, because mkinitcpio was run on installation of the kernel package with pacstrap. If you would like to generate the initial RAM disk regardless, the command is below.
 
@@ -230,13 +239,13 @@ Creating a new initramfs is usually not required, because mkinitcpio was run on 
 $ mkinitcpio -p linux
 ```
 
-#### Install text editors
+10. Install text editors
 
 ```bash
 $ pacman -S vim nano # nano is easier for newer linux users. I personally like vim.
 ```
 
-#### Localisation
+12. Localisation
 
 ```bash
 $ nano /etc/locale.gen # and uncomment en_US.UTF-8
@@ -244,7 +253,7 @@ $ locale-gen
 $ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 ```
 
-#### Network Configuration 
+13. Network Configuration 
 
 ```bash
 $ echo hostname >> /etc/hostname # replace the first hostname with your preferred hostname. This will appear in a terminal as such: "username@hostname$ ..."
@@ -273,22 +282,15 @@ or
 $ passwd [...]
 ``` -->
 
-#### Setup bootloader and install wifi required packages
+
+
+14. Setup bootloader
 
 ```bash
 $ pacman -S grub efibootmgr os-prober --target=x86_64-efi --efi-directory=efi --bootloader-id=GRUB # everything past efibootmgr is required if you set your efi in a directory other than /mnt/boot/efi
 $ grub-install [/dev/sdX]
 $ grub-mkconfig -o /boot/grub/grub.cfg
 ```
-
-Note: if you do not like grub see second bootloader instructions further below.
-
-Confirm that grub has installed
-
-```
-$ ls -l /boot/efi/EFI/arch/
-```
-
 If your bootmanager later complains that there are missing files like vmlinuz use this command in arch-chroot: `pacman -S linux`
 
 Alternatively to grub, you can use rEFInd.
@@ -298,13 +300,21 @@ $ pacman -S refind-efi
 $ refind-install
 ```
 
-Confirm that refind has installed
+15. Confirm that your boot manager was installed
+
+Grub
+
+```
+$ ls -l /boot/efi/EFI/arch/
+```
+
+rEFInd
 
 ```
 $ ls -l /boot/efi/EFI/refind/
 ```
 
-#### Install network packages
+16. Install network packages
 
 Ensure you have a network manager for connecting to wifi
 
@@ -327,17 +337,18 @@ $ pacman -S dialog netctl
 <!-- Alternatively
 
 ```bash
-$ pacman -S wpa_supplicant wcid
+$ pacman -S wcid
 ``` -->
 
-<!-- #### Create a new user
+17. Create a new user
 
 ```bash
-$ useradd -m -g users -G wheel [-s /bin/bash] username
-$ passwd username # Set the password
-``` -->
+$ useradd -m -g users -G wheel [-s /bin/bash] "username"
+$ passwd "..."
+$ EDITOR=nano visudo # uncomment "wheel All=(All) All"
+```
 
-#### Unmount and reboot
+18. Unmount and reboot
 
 ```bash
 $ exit # or Ctrl+D or ^D
@@ -347,57 +358,42 @@ $ reboot
 
 **At this point you can remove your removable media. Congratulations!**
 
-#### Create a new user
+## Final system configuration
 
-login as root
+1. First login with the password you set for your new user, and connect to wifi.
+
+2. Install audio, display, and window manager packages
+
+| Package                      | Description               | Alternative(s)              
+|------------------------------|---------------------------|----------------------|
+| pulseaudio + pulseaudio-alsa | Audio driver              | 
+| xorg + xorg-xinit            | Display server            | wayland
+| firefox                      | Web browser               |  
+| sddm                         | Display \ Login manager   | lightdm, gdm
+| i3                           | Window manager            | gnome-desktop, xfce4
 
 ```bash
-$ useradd -m -g users -G wheel [-s /bin/bash] "username"
-$ passwd "..."
-$ EDITOR=nano visudo #uncomment "wheel All=(All) All"
+$ sudo pacman -S pulseaudio pulseaudio-alsa xorg xorg-xinit firefox i3 sddm
+$ sudo systemctl enable sddm.service # replace `sddm` with `gdm` if you installed that instead
 ```
 
-#### Reboot
+3. Setup so it starts from boot
 
 ```bash
-$ exit
-$ reboot
-```
-
-#### Install packages
-
-First login with the password you set for your new user, connect to wifi, then install the packages
-
-```bash
-$ sudo pacman -S pulseaudio pulseaudio-alsa xorg xorg-xinit firefox sddm # Can also use other diplay manager other than sddm like gdm (from gnome)
-$ sudo systemctl enable sddm.service # replace sddm with gdm if you installed that instead
-```
-
-#### Setup Desktop Environment
-
-Install your desired desktop environment
-
-```bash
-$ sudo pacman -S i3 # or xfce or gnome-dekstop or others!
-```
-
-Setup so it starts from boot
-
-```bash
-$ echo "exec i3" > ~/.xinitrc #or whatever the start command is for your desktop env like startxfce4 for xfce
+$ echo "exec i3" > ~/.xinitrc # replace i3 with the start command for your window manager like startxfce4 for xfce
 $ startx
 ```
 
-## Most Useful Links
-* [Linux surface driver fixes](https://github.com/dmhacker/arch-linux-surface)
-* [Adding additional surface tools to work with arch](https://github.com/Surface-Pro-3/surface-tools)
-* [dual boot windows with arch on linux surface pro 4](https://ramsdenj.com/2016/08/29/arch-linux-on-the-surface-pro-4.html)
-* [Install arch under 10 minutes tutorial](https://www.youtube.com/watch?v=GKdPSGb9f5s&app=desktop)
-* [Foss install arch](https://itsfoss.com/install-arch-linux/)
+## Extra
 
-## Sort the steps below
+### Fonts
 
-## Packages
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra
+
+### My packages
 
 xorg
 xorg-xinit
@@ -420,70 +416,44 @@ steam
 discord
 slack
 VLC
+xrandr
+rofi
+dmenu
+compton
+feh
 
-## Fonts
+kitty
+dolphin
 
-noto-fonts
-noto-fonts-cjk
-noto-fonts-emoji
-noto-fonts-extra
+yay #all below require yay to install
 
-- linux still doesn't show up on grub boot manager. Try these links.
+To install yay, clone with git
 
+```bash
+$ git clone https://aur.archlinux.org/yay.git
+$ cd yay
+$ makepkg -si
+```
+
+Now you have yay!
+
+keybase-bin
+
+### Configurations that may differ 
+
+Please check that these files and folder are setup correctly for your machine.
+
+- .Xresources (dpi)
+- .config/i3status (not using correct labels)
+
+## Most Useful Links
+* [Linux surface driver fixes](https://github.com/dmhacker/arch-linux-surface)
+* [Adding additional surface tools to work with arch](https://github.com/Surface-Pro-3/surface-tools)
+* [Dual boot windows with arch on linux surface pro 4](https://ramsdenj.com/2016/08/29/arch-linux-on-the-surface-pro-4.html)
+* [Install arch under 10 minutes tutorial](https://www.youtube.com/watch?v=GKdPSGb9f5s&app=desktop)
+* [Foss install arch](https://itsfoss.com/install-arch-linux/)
 * [Dual booting](https://www.youtube.com/watch?v=METZCp_JCec)
 * [Dual booting with OS on another disk](https://unix.stackexchange.com/questions/252936/grub2-boot-to-a-second-another-hard-disk)
-* [Dual booting help](https://itsfoss.com/no-grub-windows-linux/)
-* [CHECK THIS](https://superuser.com/questions/182161/grub-how-find-partition-number-hd0-x)
-* [AND THIS](https://unix.stackexchange.com/questions/8867/install-grub-on-hard-disk-used-in-another-system)
-* [maybe do this?](https://unix.stackexchange.com/questions/378705/how-to-get-grub-menu-from-windows-10)
+* [Dual booting Foss help](https://itsfoss.com/no-grub-windows-linux/)
 * [Reddit thread external link](https://ramsdenj.com/2016/04/15/multi-boot-linux-with-one-boot-partition.html)
-* [efi check if windows is on](https://bbs.archlinux.org/viewtopic.php?id=240117)
-* [installing refind](https://wiki.archlinux.org/index.php/REFInd)
-
-Need to figure out how to get the EFI to detect things on another repo.
-
-Best solution thus far is in this thread [here](https://www.reddit.com/r/archlinux/comments/7uox5m/multiple_efi_partitions/)
-
-Reset windows EFI: https://forums.tomshardware.com/faq/how-to-repair-efi-bootloader-in-windows-10.3275168/
-
-Other links: 
-
-https://bbs.archlinux.org/viewtopic.php?id=242010
-
-https://www.reddit.com/r/archlinux/comments/7uox5m/multiple_efi_partitions/
-
-If I were you, I would follow these steps:
-
-    Boot from an Arch live system
-
-    Mount your main system root to /mnt (mount /dev/sda2 /mnt)
-
-    Mount the EFI partition to /boot/efi (mount /dev/sda1 /mnt/boot/efi)
-
-    chroot to your main system root (arch-chroot /mnt)
-
-    Back up Microsoft/ directory from the EFI partition to a temporary location (cp -R /boot/efi/EFI/Microsoft/ /)
-
-    Uninstall grub (pacman -Rsn grub)
-
-    Empty the EFI partition (rm -R /boot/efi/*)
-
-    Install refind to the system (pacman -Syu refind-efi)
-
-    Install refind to the EFI (refind-install)
-
-    Move back the Microsoft/ directory you've previously backed up to /boot/efi/EFI/ (mv /Microsoft/ /boot/efi/EFI/)
-
-    ^D
-
-    reboot
-
-    Make sure everything boots up properly
-
-    Configure /boot/refind_linux.conf(current linux system startup options, i.e. add processor microcode to the kernel launch parameters or set up different startup configurations
-
-    ) and /boot/efi/EFI/refind/refind.conf(refind settings)
-
-P.S. Refind detects Linux systems automatically but doesn't do so for Windows, that's why we need to mess with the Microsoft/ dir
-
-https://ramsdenj.com/2016/04/15/multi-boot-linux-with-one-boot-partition.html
+* [Installing refind](https://wiki.archlinux.org/index.php/REFInd)
