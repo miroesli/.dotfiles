@@ -59,7 +59,7 @@ exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b --respect-prop-shadow
 
 # super keybinds
-bindsym $super+l exec $HOME/.config/i3lock/lock.sh
+bindsym $super+l exec sh $HOME/.config/i3lock/lock.sh
 # bindsym $super+l exec i3lock -c 000000
 # bindsym $super+l exec slimlock
 
