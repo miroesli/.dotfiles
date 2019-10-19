@@ -36,6 +36,7 @@ dmenu
 compton
 feh
 kitty
+thunar
 
 ### AUR packages
 
