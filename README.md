@@ -45,5 +45,5 @@ imagemagick
 keybase-bin
 visual-studio-code-insiders
 cava
-i3lock-color
+[i3lock-color](https://github.com/PandorasFox/i3lock-color)
 fsearch-git
