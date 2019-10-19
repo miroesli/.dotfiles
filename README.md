@@ -37,9 +37,13 @@ compton
 feh
 kitty
 thunar
+scrot
+imagemagick
 
 ### AUR packages
 
 keybase-bin
 visual-studio-code-insiders
 cava
+i3lock-color
+fsearch-git
