@@ -393,6 +393,10 @@ noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
 
+inconsolata-psf-git
+siji-git
+ttf-font-awesome
+
 ### My packages
 
 xorg
@@ -439,7 +443,7 @@ Now you have yay!
 
 keybase-bin
 
-### Configurations that may differ 
+### Configurations that may differ
 
 Please check that these files and folder are setup correctly for your machine.
 
