@@ -7,7 +7,7 @@ T='#ee00eeee'  # text
 W='#880000bb'  # wrong
 V='#bb00bbbb'  # verifying
 
-./x86_64-pc-linux-gnu/i3lock \
+i3lock \
 --insidevercolor=$C   \
 --ringvercolor=$V     \
 \
