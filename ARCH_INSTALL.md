@@ -4,24 +4,25 @@ You can also follow the installation instructions on the [Archlinux](https://wik
 
 ## Preparation
 
-1.  [Download](https://archlinux.org/download/) ISO and GPG files (usually under Checksums)
+1. [Download](https://archlinux.org/download/) ISO and GPG files (usually under Checksums)
 
 ### On Windows
 
 2. [Download](https://rufus.ie/) rufus
 3. Download [GnuPG](https://www.gnupg.org/download/index.html) and verify the signature using
+
 ```bash
 $ gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig
 ```
 
 Alternatively, verify the authenticity of the signature by checking if the public key's fingerprint is identical to the key fingerprint of the [Arch Linux developer](https://www.archlinux.org/people/developers/) who signed it.
 
-3. Create a bootable usb by selecting the ISO in Rufus
+1. Create a bootable usb by selecting the ISO in Rufus
 
 ### On Linux
 
-2.  Verify the ISO file: `$ pacman-key -v archlinux-<version>.iso.sig`
-3.  Create a bootable usb with: `# dd if=archlinux*.iso of=/dev/sdX && sync`
+2. Verify the ISO file: `$ pacman-key -v archlinux-<version>.iso.sig`
+3. Create a bootable usb with: `# dd if=archlinux*.iso of=/dev/sdX && sync`
 
 ## Boot into your portable ARCH drive
 
@@ -41,13 +42,19 @@ $ wifi-menu
 
 Or configure manually using files in /etc/netctl/examples
 
-Check connection with 
+Check connection with
 
 ```bash
 $ ping archlinux.org
 ```
 
-3. Set timedatectl
+3. Update Pacman databases
+
+```bash
+$ pacman -Syy
+```
+
+4. Set timedatectl
 
 ```bash
 $ timedatectl set-ntp true
@@ -57,13 +64,18 @@ Check status with:
 
 ```bash
 $ timedatectl status
+$ hwclock --show
 ```
 
-4. Update Pacman databases
+The local time and hardware clock should both be your current time. If it is not, download the [ntp](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon) package and update the time.
 
 ```bash
-$ pacman -Syy
+$ pacman -S ntp
+$ ntpd -qg
+$ hwclock [-systohc/-hctosys] # use systohc or hctosys accordingly
 ```
+
+Note: `systohc` updates the hardware clock to the system clock, and `hwtosys` does the reverse.
 
 5. Configure mirror list using reflector
 
@@ -80,7 +92,7 @@ $ reflector -c "Country" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
 $ lsblk
 ```
 
-Alternatively 
+Alternatively,
 
 ```bash
 $ fdisk -l
@@ -136,7 +148,7 @@ $ mkfs.ext4 -L "Arch Linux" /dev/sdxY # `-L "Arch Linux"` is optional
 
 For EFI
 
-Note: Only format this if you created a new EFI. 
+Note: Only format this if you created a new EFI.
 
 ```bash
 $ mkfs.fat -F32 /dev/sdxY # May differ according to bootloader being used
@@ -180,7 +192,7 @@ If behind a proxy you can configure an environment variable to send your packets
 example: replace the ip and port accordingly
 
 ```bash
-$ export http_proxy=http://10.1.33.241:3128 
+$ export http_proxy=http://10.1.33.241:3128
 ```
 
 2. Install base system
@@ -206,7 +218,7 @@ $ mount /dev/sdxY /mnt/boot/efi (or /mnt/boot or /mnt/efi)
 $ genfstab -U /mnt >> /mnt/etc/fstab # optionally use -p instead of -U
 ```
 
-5. Check the output 
+5. Check the output
 
 ```bash
 $ cat /mnt/etc/fstab
@@ -253,7 +265,7 @@ $ locale-gen
 $ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 ```
 
-13. Network Configuration 
+13. Network Configuration
 
 ```bash
 $ echo hostname >> /etc/hostname # replace the first hostname with your preferred hostname. This will appear in a terminal as such: "username@hostname$ ..."
@@ -262,7 +274,7 @@ $ nano /etc/hosts
 
 Edit /etc/hosts like the following
 
-```
+```bash
 127.0.0.1 localhost
 ::1       localhost
 127.0.1.1 hostname.localdomain hostname # replace hostname with your preferred host
@@ -270,7 +282,7 @@ Edit /etc/hosts like the following
 
 or
 
-```
+```bash
 127.0.0.1 localhost.localdomain localhost
 ::1       localhost.localdomain localhost
 127.0.1.1 localhost.localdomain hostname
@@ -282,8 +294,6 @@ or
 $ passwd [...]
 ``` -->
 
-
-
 14. Setup bootloader
 
 ```bash
@@ -291,6 +301,7 @@ $ pacman -S grub efibootmgr os-prober --target=x86_64-efi --efi-directory=efi --
 $ grub-install [/dev/sdX]
 $ grub-mkconfig -o /boot/grub/grub.cfg
 ```
+
 If your bootmanager later complains that there are missing files like vmlinuz use this command in arch-chroot: `pacman -S linux`
 
 Alternatively to grub, you can use rEFInd.
@@ -304,13 +315,13 @@ $ refind-install
 
 Grub
 
-```
+```bash
 $ ls -l /boot/efi/EFI/arch/
 ```
 
 rEFInd
 
-```
+```bash
 $ ls -l /boot/efi/EFI/refind/
 ```
 
@@ -364,9 +375,9 @@ $ reboot
 
 2. Install audio, display, and window manager packages
 
-| Package                      | Description               | Alternative(s)              
+| Package                      | Description               | Alternative(s)
 |------------------------------|---------------------------|----------------------|
-| pulseaudio + pulseaudio-alsa | Audio driver              | 
+| pulseaudio + pulseaudio-alsa | Audio driver              |
 | xorg + xorg-xinit            | Display server            | wayland
 | firefox                      | Web browser               |  
 | sddm                         | Display \ Login manager   | lightdm, gdm
@@ -394,7 +405,7 @@ noto-fonts-emoji
 noto-fonts-extra
 
 inconsolata-psf-git
-siji-git
+siji-git (for polybar)
 ttf-font-awesome
 
 ### My packages
@@ -410,6 +421,7 @@ firefox
 vim
 nano
 refind-efi
+[theme for refind-efi](https://github.com/bobafetthotmail/refind-theme-regular): `$ sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/bobafetthotmail/refind-theme-regular/master/install.sh)"`
 git
 keybase
 keepass
@@ -451,13 +463,14 @@ Please check that these files and folder are setup correctly for your machine.
 - .config/i3status (not using correct labels)
 
 ## Most Useful Links
-* [Linux surface driver fixes](https://github.com/dmhacker/arch-linux-surface)
-* [Adding additional surface tools to work with arch](https://github.com/Surface-Pro-3/surface-tools)
-* [Dual boot windows with arch on linux surface pro 4](https://ramsdenj.com/2016/08/29/arch-linux-on-the-surface-pro-4.html)
-* [Install arch under 10 minutes tutorial](https://www.youtube.com/watch?v=GKdPSGb9f5s&app=desktop)
-* [Foss install arch](https://itsfoss.com/install-arch-linux/)
-* [Dual booting](https://www.youtube.com/watch?v=METZCp_JCec)
-* [Dual booting with OS on another disk](https://unix.stackexchange.com/questions/252936/grub2-boot-to-a-second-another-hard-disk)
-* [Dual booting Foss help](https://itsfoss.com/no-grub-windows-linux/)
-* [Reddit thread external link](https://ramsdenj.com/2016/04/15/multi-boot-linux-with-one-boot-partition.html)
-* [Installing refind](https://wiki.archlinux.org/index.php/REFInd)
+
+- [Linux surface driver fixes](https://github.com/dmhacker/arch-linux-surface)
+- [Adding additional surface tools to work with arch](https://github.com/Surface-Pro-3/surface-tools)
+- [Dual boot windows with arch on linux surface pro 4](https://ramsdenj.com/2016/08/29/arch-linux-on-the-surface-pro-4.html)
+- [Install arch under 10 minutes tutorial](https://www.youtube.com/watch?v=GKdPSGb9f5s&app=desktop)
+- [Foss install arch](https://itsfoss.com/install-arch-linux/)
+- [Dual booting](https://www.youtube.com/watch?v=METZCp_JCec)
+- [Dual booting with OS on another disk](https://unix.stackexchange.com/questions/252936/grub2-boot-to-a-second-another-hard-disk)
+- [Dual booting Foss help](https://itsfoss.com/no-grub-windows-linux/)
+- [Reddit thread external link](https://ramsdenj.com/2016/04/15/multi-boot-linux-with-one-boot-partition.html)
+- [Installing refind](https://wiki.archlinux.org/index.php/REFInd)
