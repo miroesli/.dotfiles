@@ -19,7 +19,7 @@ pulseaudio-alsa
 firefox
 vim
 nano
-refind-efi
+refind-efi 
 git
 keybase
 keepass
@@ -33,12 +33,12 @@ VLC
 xrandr
 rofi
 dmenu
-compton
 feh
 kitty
 thunar
 scrot
 imagemagick
+redshift
 
 ### AUR packages
 
@@ -47,3 +47,4 @@ visual-studio-code-insiders
 cava
 [i3lock-color](https://github.com/PandorasFox/i3lock-color)
 fsearch-git
+[compton-tryone-git](https://github.com/tryone144/compton)
