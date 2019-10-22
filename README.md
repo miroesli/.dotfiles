@@ -19,7 +19,7 @@ pulseaudio-alsa
 firefox
 vim
 nano
-refind-efi 
+refind-efi
 git
 keybase
 keepass
@@ -36,9 +36,10 @@ dmenu
 feh
 kitty
 thunar
-scrot
+scrot -> replaced with maim
 imagemagick
 redshift
+piper - logitech mouse settings
 
 ### AUR packages
 
