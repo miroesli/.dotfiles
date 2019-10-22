@@ -67,7 +67,9 @@ $ timedatectl status
 $ hwclock --show
 ```
 
-The local time and hardware clock should both be your current time. If it is not, download the [ntp](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon) package and update the time.
+If dual booting with windows, your time may be incorrect on the linux machine right now. To correct this check the [Arch linux Instructions](https://wiki.archlinux.org/index.php/System_time#UTC_in_Windows) or the [tutorial here](https://www.howtogeek.com/323390/how-to-fix-windows-and-linux-showing-different-times-when-dual-booting/).
+
+If the local time and hardware clock are still not your current time, download the [ntp](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon) package and update the time.
 
 ```bash
 $ pacman -S ntp
