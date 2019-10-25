@@ -1,4 +1,4 @@
 cp -r .config/ ~
 cp .Xresources ~
-cp .xinitrc ~
+# cp .xinitrc ~
 cp .xsettingsd ~
