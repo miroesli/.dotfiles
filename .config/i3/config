@@ -12,7 +12,7 @@
 # Globals
 set $mod Mod1
 set $super Mod4
-set $wallpaper ~/Pictures/wallpapers/triangle.png
+set $wallpaper ~/Pictures/wallpapers/forestlake.png
 
 # Window Borders (unused)
 # default_border pixel 0
