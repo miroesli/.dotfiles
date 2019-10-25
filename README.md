@@ -50,3 +50,4 @@ cava
 [i3lock-color](https://github.com/PandorasFox/i3lock-color)
 fsearch-git
 [compton-tryone-git](https://github.com/tryone144/compton)
+wal
