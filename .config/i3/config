@@ -12,7 +12,7 @@
 # Globals
 set $mod Mod1
 set $super Mod4
-set $wallpaper "~/Pictures/wallpapers/abstract.jpg"
+set $wallpaper ~/Pictures/wallpapers/triangle.png
 
 # Window Borders (unused)
 # default_border pixel 0
@@ -53,7 +53,7 @@ exec --no-startup-id nm-applet
 # exec --no-startup-id $HOME/.config/polybar/launch.sh &
 
 exec --no-startup-id redshift -l 48.30:-123.31
-exec --no-startup-id feh --bg-scale ~/Pictures/wallpapers/abstract.jpg &
+exec --no-startup-id feh --bg-scale $wallpaper &
 exec --no-startup-id $HOME/.config/polybar/launch.sh &
 exec --no-startup-id dunst &
 exec --no-startup-id xsettingsd &
