@@ -26,7 +26,7 @@ keepass
 rust
 python
 vscode
-steam
+steam -> lib32-mesa lib32-nvidia-utils
 discord
 slack
 VLC
@@ -40,6 +40,7 @@ scrot -> replaced with maim
 imagemagick
 redshift
 piper - logitech mouse settings
+xdg-user-dirs - to update folders in home
 
 ### AUR packages
 
