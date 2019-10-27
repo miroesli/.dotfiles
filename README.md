@@ -2,6 +2,17 @@
 
 ~/ sweet ~/
 
+## My Fonts
+
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra
+
+inconsolata-psf-git
+siji-git (for polybar)
+ttf-font-awesome
+
 ## My packages
 
 | Package Name                | Description                   | Install                      |
@@ -19,13 +30,13 @@ pulseaudio-alsa
 firefox
 vim
 nano
-refind-efi
+refind-efi [theme for refind-efi](https://github.com/bobafetthotmail/refind-theme-regular): `$ sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/bobafetthotmail/refind-theme-regular/master/install.sh)"`
 git
 keybase
 keepass
 rust
 python
-vscode
+visual-studio-code-insiders
 steam -> lib32-mesa lib32-nvidia-utils
 discord
 slack
@@ -44,6 +55,8 @@ xdg-user-dirs - to update folders in home
 
 ### AUR packages
 
+See [General Tips](GENERAL_TIPS.md) on how to install an AUR package or install with `$ makepkg -si`.
+
 keybase-bin
 visual-studio-code-insiders
 cava
@@ -51,3 +64,10 @@ cava
 fsearch-git
 [compton-tryone-git](https://github.com/tryone144/compton)
 wal
+
+### Configurations that may differ
+
+Please check that these files and folder are setup correctly for your machine.
+
+- .Xresources (dpi)
+- .config/i3status (not using correct labels)
