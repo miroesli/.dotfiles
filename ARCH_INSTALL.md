@@ -397,74 +397,9 @@ $ echo "exec i3" > ~/.xinitrc # replace i3 with the start command for your windo
 $ startx
 ```
 
-## Extra
+4. Install any other fonts or packages such as the ones showin in the [README](./README.md)
 
-### Fonts
-
-noto-fonts
-noto-fonts-cjk
-noto-fonts-emoji
-noto-fonts-extra
-
-inconsolata-psf-git
-siji-git (for polybar)
-ttf-font-awesome
-
-### My packages
-
-xorg
-xorg-xinit
-sddm
-xfce4
-i3 - 1 3 4 5
-pulseaudio
-pulseaudio-alsa
-firefox
-vim
-nano
-refind-efi
-[theme for refind-efi](https://github.com/bobafetthotmail/refind-theme-regular): `$ sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/bobafetthotmail/refind-theme-regular/master/install.sh)"`
-git
-keybase
-keepass
-rust
-python
-vscode
-steam
-discord
-slack
-VLC
-xrandr
-rofi
-dmenu
-compton
-feh
-
-kitty
-dolphin
-
-yay #all below require yay to install
-
-To install yay, clone with git
-
-```bash
-$ git clone https://aur.archlinux.org/yay.git
-$ cd yay
-$ makepkg -si
-```
-
-Now you have yay!
-
-keybase-bin
-
-### Configurations that may differ
-
-Please check that these files and folder are setup correctly for your machine.
-
-- .Xresources (dpi)
-- .config/i3status (not using correct labels)
-
-## Most Useful Links
+## Some Useful Links
 
 - [Linux surface driver fixes](https://github.com/dmhacker/arch-linux-surface)
 - [Adding additional surface tools to work with arch](https://github.com/Surface-Pro-3/surface-tools)
