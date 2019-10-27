@@ -397,7 +397,7 @@ $ echo "exec i3" > ~/.xinitrc # replace i3 with the start command for your windo
 $ startx
 ```
 
-4. Install any other fonts or packages such as the ones showin in the [README](./README.md)
+4. Install any other fonts or packages such as the ones showin in the [README](../README.md)
 
 ## Some Useful Links
 
