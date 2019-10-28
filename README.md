@@ -52,6 +52,7 @@ imagemagick
 redshift
 piper - logitech mouse settings
 xdg-user-dirs - to update folders in home
+syncthing
 
 ### AUR packages
 

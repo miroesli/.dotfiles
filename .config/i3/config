@@ -54,6 +54,7 @@ exec --no-startup-id nm-applet
 
 exec --no-startup-id redshift -c "../redshift/redshift.conf"
 # exec --no-startup-id redshift -l 48.30:-123.31
+exec --no-startup-id syncthing
 exec --no-startup-id feh --bg-scale $wallpaper &
 exec --no-startup-id $HOME/.config/polybar/launch.sh &
 exec --no-startup-id dunst &
