@@ -62,6 +62,7 @@ exec --no-startup-id compton --config ~/.config/compton/compton.conf # -b --resp
 
 # super keybinds
 bindsym $super+l exec sh $HOME/.config/i3lock/lock.sh
+bindsym $super+p exec maim -s ~/Pictures/$(date +%s).png
 # bindsym $super+l exec i3lock -c 000000
 # bindsym $super+l exec slimlock
 
