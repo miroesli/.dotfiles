@@ -53,12 +53,14 @@ redshift
 piper - logitech mouse settings
 xdg-user-dirs - to update folders in home
 syncthing
+zsh
 
 ### AUR packages
 
 See [General Tips](GENERAL_TIPS.md) on how to install an AUR package or install with `$ makepkg -si`.
 
 keybase-bin
+oh-my-zsh-git
 visual-studio-code-insiders
 cava
 [i3lock-color](https://github.com/PandorasFox/i3lock-color)

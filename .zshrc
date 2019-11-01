@@ -4,19 +4,8 @@
 #  / /_\__ \ | | | | | (__
 # /____|___/_| |_|_|  \___|
 
-# By da-edra https://github.com/da-edra
-
 # Aliases for a few useful commands
-alias mirrorUpdate="sudo reflector --latest 250 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
-alias pacmanGhost="~/.scripts/pacman.sh"
-alias shivita="toilet -f mono12 -F rainbow 'andrea' | ponythink -f winona"
-alias emacs="emacs -nw"
-alias ls="lsd"
-alias ip="ip -c"
-alias rm="rm -i"
-alias x="ranger"
-alias c="cmus"
-alias h="htop"
+alias ls='ls --color=auto'
 
 # Show OS info when opening a new terminal
 neofetch
@@ -119,7 +108,7 @@ plugins=(git
          zsh-syntax-highlighting)
 
 autoload -U compinit && compinit
-source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/vault vault
