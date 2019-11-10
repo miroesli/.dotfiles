@@ -20,7 +20,8 @@ case $chosen in
         systemctl reboot
         ;;
     $lock)
-        light-locker-command -l
+        # sleep for a bit to not capture the rofi window on the lockscreen
+        sleep 0.001; ~/.config/i3lock/lock.sh
         ;;
     $suspend)
         mpc -q pause
