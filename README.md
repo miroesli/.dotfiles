@@ -12,15 +12,17 @@ noto-fonts-extra
 inconsolata-psf-git
 siji-git (for polybar)
 ttf-font-awesome
+ttf-comfortaa - rofi
+nerd-fonts-complete - rofi
 
 ## My packages
 
-| Package Name                | Description                   | Install                      |
-|-----------------------------|-------------------------------|------------------------------|
-| i3-gaps                     | Window manager                | `$ sudo pacman -S i3`        |
-| Rofi                        | Program launcher              | `$ sudo pacman -S rofi`      |
-| Compton                     | Compositor                    | `$ sudo pacman -S compton`   |
-| Feh                         | Image viewer and wallpaper    | `$ sudo pacman -S feh`       |
+| Package Name | Description                | Install                    |
+| ------------ | -------------------------- | -------------------------- |
+| i3-gaps      | Window manager             | `$ sudo pacman -S i3`      |
+| Rofi         | Program launcher           | `$ sudo pacman -S rofi`    |
+| Compton      | Compositor                 | `$ sudo pacman -S compton` |
+| Feh          | Image viewer and wallpaper | `$ sudo pacman -S feh`     |
 
 xorg
 xorg-xinit
@@ -42,7 +44,7 @@ discord
 slack
 VLC
 xrandr
-rofi
+rofi -> https://gitlab.com/vahnrr/rofi-menus
 dmenu
 feh
 kitty
