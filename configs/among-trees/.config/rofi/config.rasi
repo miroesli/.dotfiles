@@ -9,6 +9,7 @@
  */
 
 configuration {
+  theme: "~/.cache/wal/colors-rofi-dark.rasi";
   show-icons:         true;
   icon-theme:         "Paper";
   cycle:              true;
@@ -18,7 +19,3 @@ configuration {
   display-drun:       "apps";
   columns: 2;
 } 
-
-/**
-theme: "~/.cache/wal/colors-rofi-dark.rasi";
-*/
