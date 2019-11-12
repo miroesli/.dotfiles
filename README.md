@@ -2,7 +2,23 @@
 
 ~/ sweet ~/
 
-## My Fonts
+## About
+
+OS: [Arch Linux](https://www.archlinux.org/)
+WM: [i3](https://github.com/i3/i3) / [i3-gaps](https://github.com/Airblader/i3)
+Terminal: [kitty](https://github.com/kovidgoyal/kitty)
+Compositor: [tryone144/compton](https://github.com/tryone144/compton)
+File manager: [ranger](https://github.com/ranger/ranger), [thunar](https://github.com/xfce-mirror/thunar)
+Web browser: [firefox](https://www.archlinux.org/packages/extra/x86_64/firefox/)
+Lockscreen: [i3lock-color](https://github.com/PandorasFox/i3lock-color)
+Wallpaper: [forest lake](./wallpapers)
+Wallpaper Manager: [python-pywal](https://github.com/dylanaraps/pywal)
+
+## Screenshots
+
+Coming soon...
+
+## Fonts
 
 noto-fonts
 noto-fonts-cjk
@@ -15,7 +31,7 @@ ttf-font-awesome
 ttf-comfortaa - rofi
 nerd-fonts-complete - rofi
 
-## My packages
+## Packages
 
 | Package Name | Description                | Install                    |
 | ------------ | -------------------------- | -------------------------- |
@@ -57,6 +73,8 @@ xdg-user-dirs - to update folders in home
 syncthing
 zsh
 unzip
+python-pywal
+zathura
 
 ### AUR packages
 
@@ -69,11 +87,11 @@ cava
 [i3lock-color](https://github.com/PandorasFox/i3lock-color)
 fsearch-git
 [compton-tryone-git](https://github.com/tryone144/compton)
-wal
+joplin
 
-### Configurations that may differ
+### Configuration
 
-Please check that these files and folder are setup correctly for your machine.
+Please check that these files are setup correctly for your machine as they may differ.
 
 - .Xresources (dpi)
 - .config/i3status (not using correct labels)
