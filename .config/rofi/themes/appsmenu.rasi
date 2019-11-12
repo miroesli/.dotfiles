@@ -3,7 +3,8 @@
  */
 @import "shared/settings.rasi"
 * {
-  background-color: @background;
+  /** background-color: @background; */
+  background-color: #1c1c1cCC;
   text-color: @foreground-list;
   font: @text-font;
 }

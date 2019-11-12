@@ -7,6 +7,7 @@
  *  - powermenu:    ~/.config/rofi/scripts/powermenu.sh
  *  - scrot:        ~/.config/rofi/scripts/scrot.sh
  */
+
 configuration {
   show-icons:         true;
   icon-theme:         "Paper";
@@ -16,4 +17,8 @@ configuration {
   modi:               "drun";
   display-drun:       "apps";
   columns: 2;
-}
+} 
+
+/**
+theme: "~/.cache/wal/colors-rofi-dark.rasi";
+*/
