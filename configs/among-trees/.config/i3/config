@@ -69,7 +69,7 @@ exec --no-startup-id nm-applet
 
 # autostarts
 # exec --no-startup-id wal -i $HOME/Pictures/wallpapers/abstract.jpg & 
-# exec_always --no-startup-id wal -R
+exec_always --no-startup-id wal -R
 exec --no-startup-id redshift -c ~/.config/redshift/redshift.conf
 exec --no-startup-id syncthing -no-browser
 exec --no-startup-id feh --bg-scale $wallpaper &
