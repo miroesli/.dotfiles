@@ -69,7 +69,8 @@ exec --no-startup-id nm-applet
 
 # autostarts
 # exec --no-startup-id wal -i $HOME/Pictures/wallpapers/abstract.jpg & 
-exec --no-startup-id redshift -c "../redshift/redshift.conf"
+# exec_always --no-startup-id wal -R
+exec --no-startup-id redshift -c ~/.config/redshift/redshift.conf
 exec --no-startup-id syncthing -no-browser
 exec --no-startup-id feh --bg-scale $wallpaper &
 exec --no-startup-id $HOME/.config/polybar/launch.sh &
@@ -129,7 +130,8 @@ bindsym $super+m exec --no-startup-id ~/.config/rofi/scripts/maimmenu.sh
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run (default)
-bindsym $mod+Shift+d exec dmenu_run -fn 'Noto Sans:pixelsize=15' #-l 3 -nf '#707880' -sf '#cc6666' -nb '#1d1f21' -sb '#1d1f21'
+# bindsym $mod+Shift+d exec dmenu_run -fn 'Noto Sans:pixelsize=15' #-l 3 -nf '#707880' -sf '#cc6666' -nb '#1d1f21' -sb '#1d1f21'
+bindsym $mod+Shift+d exec dmenu_run -fn 'Noto Sans:pixelsize=15' -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
