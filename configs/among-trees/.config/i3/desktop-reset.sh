@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-# wal -R
+wal -R
 
-# source ~/.cache/wal/colors.sh
+source ~/.cache/wal/colors.sh
 # hsetroot -solid "$background"
 
 killall -q polybar
