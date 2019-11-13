@@ -8,7 +8,7 @@
 alias ls='ls --color=auto'
 
 # Show OS info when opening a new terminal
-neofetch
+# neofetch
 
 # Font mode for powerlevel9k
 P9K_MODE="nerdfont-complete"
