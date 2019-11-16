@@ -74,6 +74,7 @@ Wallpaper Manager: [python-pywal](https://github.com/dylanaraps/pywal)\
 | python-pywal                                                                    | Generate color theme                  |                            |
 | zathura                                                                         | Pdf viewer                            |                            |
 | [zsh-theme-powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k)          |                                       |                            |
+| [zsh-nvm](https://github.com/lukechilds/zsh-nvm)                                |                                       |                            |
 
 ### AUR packages
 
