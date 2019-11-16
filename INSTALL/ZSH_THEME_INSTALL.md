@@ -20,6 +20,8 @@ https://github.com/Powerlevel9k/powerlevel9k/wiki/Install-Instructions#option-2-
 $ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 ```
 
+or this: https://github.com/Powerlevel9k/powerlevel9k?
+
 ## Update ~/.zshrc
 
 ```bash
@@ -28,6 +30,12 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 ## Install plugins
 
+```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions \${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 git clone https://github.com/zsh-users/zsh-completions \${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+git clone https://github.com/lukechilds/zsh-nvm
+```
