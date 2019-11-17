@@ -9,6 +9,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export TERM=xterm-256color
+# export TERM=xterm-kitty
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -113,3 +115,15 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Custom Aliases
+alias psync='sudo pacman -Syy' #Sync packages
+alias pac='sudo /usr/bin/pacman -S' #Install packages
+alias pacu='sudo /usr/bin/pacman -Syu' #Update packages
+alias pacr='sudo pacman -Rsn' #Remove package
+alias pacs='/usr/bin/pacman -Ss' #List packages
+alias paci='/usr/bin/pacman -Si' #Package Information
+alias pacei='/usr/bin/pacman -Qe' #Explicitly installed packages
+alias pacsi="pacman -Qei | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "base-devel" ) { print name } }'" #List explicitly installed packages except base and base-devel
+alias pacso='/usr/bin/pacman -Qdtq' #List all orphans
+alias music='ncmpcpp' #run mpd client 
