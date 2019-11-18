@@ -9,12 +9,15 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export TERM=xterm-256color
+# export TERM=xterm-kitty
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -74,17 +77,16 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-# plugins=(git
-#          gitfast
-#          golang
-#          history-substring-search
-#          terraform
-#          virtualenv
-#          zsh-autosuggestions
-#          zsh-completions
-#          zsh-syntax-highlighting)
+plugins=(git
+         gitfast
+         golang
+         history-substring-search
+         terraform
+         virtualenv
+         zsh-nvm
+         zsh-autosuggestions
+         zsh-completions
+         zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,3 +115,15 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Custom Aliases
+alias psync='sudo pacman -Syy' #Sync packages
+alias pac='sudo /usr/bin/pacman -S' #Install packages
+alias pacu='sudo /usr/bin/pacman -Syu' #Update packages
+alias pacr='sudo pacman -Rsn' #Remove package
+alias pacs='/usr/bin/pacman -Ss' #List packages
+alias paci='/usr/bin/pacman -Si' #Package Information
+alias pacei='/usr/bin/pacman -Qe' #Explicitly installed packages
+alias pacsi="pacman -Qei | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "base-devel" ) { print name } }'" #List explicitly installed packages except base and base-devel
+alias pacso='/usr/bin/pacman -Qdtq' #List all orphans
+alias music='ncmpcpp' #run mpd client 

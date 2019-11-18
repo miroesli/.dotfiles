@@ -81,17 +81,16 @@ Wallpaper Manager: [python-pywal](https://github.com/dylanaraps/pywal)\
 
 See [General Tips](GENERAL_TIPS.md) on how to install an AUR package or install with `$ makepkg -si`.
 
-| Package Name                                                                     | Description    | Install |
-| -------------------------------------------------------------------------------- | -------------- | ------- |
-| keybase-bin                                                                      |                |         |
-| [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)                           |                |         |
-| [oh-my-zsh-git](https://aur.archlinux.org/packages/oh-my-zsh-git/) (Alternative) |                |         |
-| visual-studio-code-insiders                                                      |                |         |
-| cava                                                                             |                |         |
-| [i3lock-color](https://github.com/PandorasFox/i3lock-color)                      |                |         |
-| fsearch-git                                                                      |                |         |
-| [compton-tryone-git](https://github.com/tryone144/compton)                       |                |         |
-| joplin                                                                           | Notetaking app |         |
+| Package Name                                                                     | Description | Install |
+| -------------------------------------------------------------------------------- | ----------- | ------- |
+| keybase-bin                                                                      |             |         |
+| [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)                           |             |         |
+| [oh-my-zsh-git](https://aur.archlinux.org/packages/oh-my-zsh-git/) (Alternative) |             |         |
+| visual-studio-code-insiders                                                      |             |         |
+| cava                                                                             |             |         |
+| [i3lock-color](https://github.com/PandorasFox/i3lock-color)                      |             |         |
+| fsearch-git                                                                      |             |         |
+| [compton-tryone-git](https://github.com/tryone144/compton)                       |             |         |
 
 ### Configuration
 
