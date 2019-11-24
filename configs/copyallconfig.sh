@@ -9,4 +9,5 @@ cp .Xresources ~
 cp .xinitrc ~
 cp .xsettingsd ~
 cp .zshrc ~
+cp .vimrc ~
 wal -i ../../wallpapers/forestlake.png
