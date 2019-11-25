@@ -58,7 +58,7 @@ font-2 = "Noto Sans:pixelsize=10;1"
 
 modules-left = i3
 modules-center = date
-modules-right = filesystem alsa pulseaudio xkeyboard memory cpu wlan battery temperature powermenu
+modules-right = filesystem alsa pulseaudio xkeyboard memory cpu wlan battery temperature powermenu updates-arch-combined
 
 tray-position = right
 tray-padding = 2
@@ -221,7 +221,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp33s0
+interface = wlp1s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -269,7 +269,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+;format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -598,3 +598,10 @@ margin-top = 5
 margin-bottom = 5
 
 ; vim:ft=dosini
+
+; ===== Polybar scripts =====
+
+[module/updates-arch-combined]
+type = custom/script
+exec = ~/.config/polybar/polybar-scripts/updates-arch-combined/updates-arch-combined.sh
+interval = 600
