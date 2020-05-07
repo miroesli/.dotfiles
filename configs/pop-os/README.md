@@ -9,7 +9,6 @@ File manager: [TBD]()\
 Web browser: [firefox](https://www.archlinux.org/packages/extra/x86_64/firefox/)\
 Lockscreen: [TBD]()\
 Wallpaper: [Nasa Orion]()\
-Wallpaper Manager: [python-pywal](https://github.com/dylanaraps/pywal)\
 
 ## Apps
 
