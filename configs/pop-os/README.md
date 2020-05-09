@@ -19,6 +19,9 @@ Wallpaper: [Nasa Orion]()\
 - Signal
 - Slack
 - Firefox
+- Vscodium
+- htop
+- gotop
 
 ## Languages
 
