@@ -53,3 +53,7 @@ See the [config instructions](INSTALL/INSTRUCTIONS.md) in the INSTALL folder.
 - Podcasts: AntennaPod
 - Music: Spotify
 - Gaming: Steam
+
+### Utility
+
+- vlc
