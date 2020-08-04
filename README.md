@@ -22,9 +22,9 @@ See the [config instructions](INSTALL/INSTRUCTIONS.md) in the INSTALL folder.
 
 ### Internet
 
-- Browser: Firefox
-- Search Engine: DuckDuckGo
-- Mail: Protonmail
+- **Browser**: Firefox
+- **Search Engine**: DuckDuckGo
+- **Mail**: Protonmail
 
 #### Add-Ons
 
@@ -54,6 +54,7 @@ See the [config instructions](INSTALL/INSTRUCTIONS.md) in the INSTALL folder.
 - Music: Spotify
 - Gaming: Steam
 
-### Utility
+### Utility & Packages
 
 - vlc
+- python3 python3-pip python3-venv
