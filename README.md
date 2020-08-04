@@ -22,17 +22,14 @@ See the [config instructions](INSTALL/INSTRUCTIONS.md) in the INSTALL folder.
 
 ### Internet
 
-- **Browser**: Firefox
-- **Search Engine**: DuckDuckGo
-- **Mail**: Protonmail
-
-#### Add-Ons
-
-- Password Manager: Bitwarden
-- Add/Script Blocker: uBlockOrigin
-- Facebook Container
-- Https Everywhere
-- Decentraleyes
+- Browser: Firefox
+- Search Engine: DuckDuckGo
+- Add-Ons:
+  - Password Manager: Bitwarden
+  - Add/Script Blocker: uBlockOrigin
+  - Facebook Container
+  - Https Everywhere
+  - Decentraleyes
 
 ### Communication
 
