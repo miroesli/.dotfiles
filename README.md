@@ -1,14 +1,10 @@
 # dotfiles
 
-~/ sweet ~/
-
-## About
-
-Coming soon...
+My `~ sweet ~` of configuration files for linux.
 
 ## Screenshots
 
-Coming soon...
+See the [config screenshots](configs/README.md) in the `configs` folder.
 
 ## Instructions
 
