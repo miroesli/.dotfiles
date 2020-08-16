@@ -12,13 +12,13 @@ Coming soon...
 
 ## Instructions
 
-See the [config instructions](INSTALL/INSTRUCTIONS.md) in the INSTALL folder.
+See the [config instructions](docs/INSTRUCTIONS.md) in the `docs` folder.
 
 ## Current Setup
 
 ### OS
 
-- Pop!_OS
+- Pop!\_OS
 
 ### Internet
 
