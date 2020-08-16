@@ -1,5 +1,7 @@
 # Among Trees
 
+![pillars-of-creation](./images/among-trees-demo.png)
+
 ## About
 
 OS: [Arch Linux](https://www.archlinux.org/)\
