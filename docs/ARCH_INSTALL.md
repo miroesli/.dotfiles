@@ -83,7 +83,7 @@ Note: `systohc` updates the hardware clock to the system clock, and `hwtosys` do
 
 ```bash
 $ pacman -S reflector
-$ reflector -c "Country" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
+$ reflector --country Canada --country "United States" --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
 ## Partition the disk
@@ -200,7 +200,7 @@ $ export http_proxy=http://10.1.33.241:3128
 2. Install base system
 
 ```bash
-$ pacstrap /mnt base base-devel
+$ pacstrap /mnt base base-devel linux linux-firmware
 ```
 
 3. Mount efi now (only do this if dual booting)
@@ -210,8 +210,8 @@ For EFI
 Note: If you are dual booting, remember to use the efi from the existing OS. Also make sure to create the according folder structure in /mnt.
 
 ```bash
-$ mkdir /mnt/boot/efi
-$ mount /dev/sdxY /mnt/boot/efi (or /mnt/boot or /mnt/efi)
+$ mkdir /mnt/efi
+$ mount /dev/sdxY /mnt/efi (or /mnt/boot or /mnt/boot/efi)
 ```
 
 4. Generate fstab
@@ -299,8 +299,9 @@ $ passwd [...]
 14. Setup bootloader
 
 ```bash
-$ pacman -S grub efibootmgr os-prober --target=x86_64-efi --efi-directory=efi --bootloader-id=GRUB # everything past efibootmgr is required if you set your efi in a directory other than /mnt/boot/efi
-$ grub-install [/dev/sdX]
+$ pacman -S grub efibootmgr os-prober
+$ grub-install --target=x86_64-efi --efi-directory=efi --bootloader-id=GRUB --boot-directory=efi --debug 
+# os-prober is required if you set your efi in a directory other than /mnt/efi
 $ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
@@ -318,13 +319,13 @@ $ refind-install
 Grub
 
 ```bash
-$ ls -l /boot/efi/EFI/arch/
+$ ls -l /efi/EFI/arch/
 ```
 
 rEFInd
 
 ```bash
-$ ls -l /boot/efi/EFI/refind/
+$ ls -l /efi/EFI/refind/
 ```
 
 16. Install network packages
@@ -332,7 +333,7 @@ $ ls -l /boot/efi/EFI/refind/
 Ensure you have a network manager for connecting to wifi
 
 ```bash
-$ which NetworkManager
+$ nmcli --help
 ```
 
 If not, Install
@@ -346,12 +347,6 @@ Alternatively/Optionally install dialog to be able to connect to wifi with wifi-
 ```bash
 $ pacman -S dialog netctl
 ```
-
-<!-- Alternatively
-
-```bash
-$ pacman -S wcid
-``` -->
 
 17. Create a new user
 
@@ -375,10 +370,31 @@ $ reboot
 
 1. First login with the password you set for your new user, and connect to wifi.
 
+You may need to start the network manager service
+
+```bash
+sudo systemctl enable NetworkManager.service
+sudo systemctl start NetworkManager.service
+```
+
+If using wifi, you will need to connect to the wifi as well using `nmcli` or `nmtui` for the graphical version.
+
+```bash
+sudo nmcli dev wifi rescan
+sudo nmcli dev wifi connect SSID
+```
+
+or
+
+```bash
+sudo nmtui
+```
+
 2. Install audio, display, and window manager packages
 
 | Package                      | Description               | Alternative(s)
 |------------------------------|---------------------------|----------------------|
+| vlc                          | media player              |
 | pulseaudio + pulseaudio-alsa | Audio driver              |
 | xorg + xorg-xinit            | Display server            | wayland
 | firefox                      | Web browser               |  
@@ -393,7 +409,8 @@ $ sudo systemctl enable sddm.service # replace `sddm` with `gdm` if you installe
 3. Setup so it starts from boot
 
 ```bash
-$ echo "exec i3" > ~/.xinitrc # replace i3 with the start command for your window manager like startxfce4 for xfce
+$ echo "exec i3" > ~/.xinitrc 
+# replace i3 with the start command for your window manager like startxfce4 for xfce
 $ startx
 ```
 
