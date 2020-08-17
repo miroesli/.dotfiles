@@ -14,7 +14,8 @@ See the [config instructions](docs/INSTRUCTIONS.md) in the `docs` folder.
 
 ### OS
 
-- Pop!\_OS
+- [Archlinux](https://www.archlinux.org/)
+- [grub](https://www.archlinux.org/packages/core/x86_64/grub/) boot manager
 
 ### Internet
 
@@ -31,7 +32,6 @@ See the [config instructions](docs/INSTRUCTIONS.md) in the `docs` folder.
 
 - Protonmail
 - Discord
-- Thunderbird
 - Signal
 - Slack
 
@@ -43,11 +43,11 @@ See the [config instructions](docs/INSTRUCTIONS.md) in the `docs` folder.
 
 ### Entertainment
 
-- Podcasts: AntennaPod
 - Music: Spotify
 - Gaming: Steam
 
 ### Utility & Packages
 
+- python python-pip
 - vlc
-- python3 python3-pip python3-venv
+- zsh
