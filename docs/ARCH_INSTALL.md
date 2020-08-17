@@ -425,6 +425,14 @@ sudo pacman -S xdg-user-dirs
 xdg-user-dirs-update
 ```
 
+### Setup graphics drivers and monitors
+
+```bash
+sudo pacman -S nvidia nvidia-settings
+sudo nvidia-settings
+# edit the settings and save to /etc/X11/xorg.conf
+```
+
 ## Some Useful Links
 
 - [Linux surface driver fixes](https://github.com/dmhacker/arch-linux-surface)
