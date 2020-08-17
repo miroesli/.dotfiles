@@ -414,7 +414,16 @@ $ echo "exec i3" > ~/.xinitrc
 $ startx
 ```
 
-4. Install any other fonts or packages such as the ones showin in the [README](../README.md)
+4. Install any other fonts or packages such as the ones shown in the [README](../README.md)
+
+## Extra
+
+### Setup home directories
+
+```bash
+sudo pacman -S xdg-user-dirs
+xdg-user-dirs-update
+```
 
 ## Some Useful Links
 
