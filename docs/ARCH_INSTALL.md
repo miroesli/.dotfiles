@@ -1,6 +1,6 @@
 # Arch Install
 
-You can also follow the installation instructions on the [Archlinux](https://wiki.archlinux.org/index.php/Installation_guide) website.
+My personal arch install process. The Archlinux installation instructions can also be viewed on the [Archlinux](https://wiki.archlinux.org/index.php/Installation_guide) website. This is **highly recommended** and the best way to setup Archlinux.
 
 ## Preparation
 
