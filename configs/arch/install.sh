@@ -1,5 +1,5 @@
 #!/bin/bash
-configs=(alacritty dunst i3 i3blocks redshift)
+configs=(alacritty dunst i3 i3status redshift)
 dots=(.zshrc)
 
 for config in "${configs[@]}"
