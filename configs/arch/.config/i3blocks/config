@@ -11,7 +11,7 @@ separator=true
 separator_block_width=15
 
 [documentation]
-full_text=Documentationtest
+full_text=Documentation
 website=https://vivien.github.io/i3blocks
 command=xdg-open "$website"
 color=#f12711
