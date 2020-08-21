@@ -38,6 +38,11 @@ Wallpaper: None
 ## Fonts
 
 - ttf-meslo-nerd-font-powerlevel10k
+- All noto-fonts
+  - noto-fonts
+  - noto-fonts-cjk
+  - noto-fonts-emoji
+  - noto-fonts
 
 ## Todo
 
@@ -51,3 +56,7 @@ Wallpaper: None
 - [] Setup rofi menus
 - [] Add background
 - [] Setup global colouring
+- [] Fix keyboard not typing on start terminal for ~2s if no display maanger set
+- [] xhci-hcd hc dies on reboot
+- [] Zsh color in linux terminal before startup (startx)
+- [] Change i3 keybinds to vi navigation
