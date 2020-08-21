@@ -35,6 +35,10 @@ Wallpaper: None
 - Go
 - Python
 
+## Fonts
+
+- ttf-meslo-nerd-font-powerlevel10k
+
 ## Todo
 
 - [] Setup global fonts config with something like fonts-conf
