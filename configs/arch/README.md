@@ -62,3 +62,4 @@ Wallpaper: None
 - [ ] Change i3 keybinds to vi navigation
 - [ ] Consider using polybar instead of i3bar
 - [ ] Consider using rofi instead of dmenu
+- [ ] Add gitconfig
