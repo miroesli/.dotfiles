@@ -22,13 +22,15 @@ Wallpaper: None
 -->
 ## Apps
 
-- Discord
-- Steam
-- Signal
-- Slack
-- Firefox
-- Neovim
-- Glances
+- Steam - games
+- Communication
+  - Signal
+  - Discord
+  - Slack
+- Firefox - browser
+- Neovim - text editor
+- Glances - system monitor
+- Xreader - pdfs
 
 ## Languages
 
