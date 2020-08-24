@@ -3,6 +3,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod1
+set $super Mod4
 
 # Font for window titles. 
 font pango:monospace 11
@@ -12,7 +13,8 @@ font pango:monospace 11
 
 # [Startup]
 
-exec --no-startup-id redshift -c ~/.config/redshift/redshift.conf
+exec --no-startup-id sh $HOME/.config/polybar/launch.sh &
+exec --no-startup-id redshift -c ~/.config/redshift/redshift.conf &
 
 # [Lock Screen]
 
@@ -154,6 +156,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+bindsym $super+r exec --no-startup-id sh $HOME/.config/polybar/restart.sh
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -171,7 +174,8 @@ smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-# smart_borders on
+#smart_borders on
+hide_edge_borders smart
 
 # Press $mod+Shift+g to enter the gap mode. 
 # Choose o or i for modifying outer/inner gaps.
@@ -249,11 +253,11 @@ assign [class="kitty|Alacritty"] $ws2
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status 
-	position top
-	tray_output primary
+#bar {
+        # status_command i3status 
+	# position top
+	# tray_output primary
 	# mode hide
     	# hidden_state hide
 	# modifier Mod1 
-}
+#}
