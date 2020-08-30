@@ -7,13 +7,15 @@ set $super Mod4
 
 # Font for window titles. 
 font pango:monospace 11
+for_window [class = "^.*"] border pixel 1
+for_window [title = "^.*"] border pixel 1
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
 # [Startup]
 
-exec --no-startup-id sh $HOME/.config/polybar/launch.sh &
+exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh &
 exec --no-startup-id redshift -c ~/.config/redshift/redshift.conf &
 
 # [Lock Screen]
