@@ -65,4 +65,6 @@ Wallpaper: None
 - [ ] Consider using `polybar` instead of `i3bar`
 - [ ] Consider using `rofi` instead of `dmenu`
 - [ ] Add `gitconfig`
+  - [ ] Set the core.autocrlf and core.editor configs
+- [ ] Examine [terminal optimizations](https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l) 
 - [ ] Create `~/.xsession` file for  setting background and other i3 stuff (see `man i3`)
