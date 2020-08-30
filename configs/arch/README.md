@@ -48,20 +48,24 @@ Wallpaper: None
 
 ## Todo
 
-- [ ] Setup global fonts config with something like fonts-conf
-- [ ] Configure i3bar with i3blocks
-- [ ] Setup neovim plugins and .vimrc file
+- [ ] Setup global fonts config with something like `fonts-conf`
+- [ ] Configure `i3bar` with `i3blocks`
+- [ ] Setup `neovim` plugins and `~/.vimrc` file
 - [ ] Get graphical file manager like nautilus or thunar
-- [ ] Setup i3lock
-- [ ] Use vi in alacritty
+- [ ] Setup `i3lock`
+- [ ] Use `vi` in alacritty
 - [ ] Fix dmenu configuration
-- [ ] Setup rofi menus
+- [ ] Setup `rofi` menus
 - [ ] Add background
 - [ ] Setup global colouring
 - [ ] Fix keyboard not typing on start terminal for ~2s if no display maanger set
 - [ ] xhci-hcd hc dies on reboot
-- [ ] Zsh color in linux terminal before startup (startx)
-- [ ] Change i3 keybinds to vi navigation
-- [ ] Consider using polybar instead of i3bar
-- [ ] Consider using rofi instead of dmenu
-- [ ] Add gitconfig
+- [ ] `Zsh` color in linux terminal before startup (startx)
+- [ ] Change `i3` keybinds to `vi` navigation
+- [ ] Consider using `polybar` instead of `i3bar`
+- [ ] Consider using `rofi` instead of `dmenu`
+- [ ] Add `gitconfig`
+  - [ ] Set the core.autocrlf and core.editor configs
+- [ ] Examine [terminal optimizations](https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l) 
+- [ ] Create `~/.xsession` file for  setting background and other i3 stuff (see `man i3`)
+- [ ] Fix firefox css not working for config/theme/preferences page
