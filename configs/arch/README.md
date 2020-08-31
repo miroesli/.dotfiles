@@ -45,6 +45,8 @@ Wallpaper: None
   - noto-fonts-cjk
   - noto-fonts-emoji
   - noto-fonts
+- siji-git
+- bdf-unifont
 
 ## Todo
 
