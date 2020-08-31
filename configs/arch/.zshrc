@@ -107,3 +107,23 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+## Custom Aliases
+# Pacman
+alias psync='sudo pacman -Syy' #Sync packages
+alias pac='sudo /usr/bin/pacman -S' #Install packages
+alias pacu='sudo /usr/bin/pacman -Syu' #Update packages
+alias pacr='sudo pacman -Rsn' #Remove package
+alias pacs='/usr/bin/pacman -Ss' #List packages
+alias paci='/usr/bin/pacman -Si' #Package Information
+alias pacei='/usr/bin/pacman -Qe' #Explicitly installed packages
+alias pacsi="pacman -Qei | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "base-devel" ) { print name } }'" #List explicitly installed packages except base and base-devel
+alias pacso='/usr/bin/pacman -Qdtq' #List all orphans
+alias music='ncmpcpp' #run mpd client
+# Git
+alias gs='git status'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gp='git push'
+alias gpl='git pull'
+alias gcl='git clone'
