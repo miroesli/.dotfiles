@@ -2,8 +2,10 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
+# Globals
 set $mod Mod1
 set $super Mod4
+set $wallpaper ~/dotfiles/configs/arch/images/arch.jpg
 
 # Font for window titles. 
 font pango:monospace 11
@@ -14,7 +16,8 @@ for_window [title = "^.*"] border pixel 1
 # they are included here as an example. Modify as you see fit.
 
 # [Startup]
-
+# exec --no-startup-id picom -b --config ~/.config/picom/picom.conf &
+exec --no-startup-id feh --bg-scale $wallpaper &
 exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh &
 exec --no-startup-id redshift -c ~/.config/redshift/redshift.conf &
 
