@@ -109,6 +109,8 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ## Custom Aliases
+# General
+alias vi='nvim'
 # Pacman
 alias psync='sudo pacman -Syy' #Sync packages
 alias pac='sudo /usr/bin/pacman -S' #Install packages
@@ -122,7 +124,8 @@ alias pacso='/usr/bin/pacman -Qdtq' #List all orphans
 alias music='ncmpcpp' #run mpd client
 # Git
 alias gs='git status'
-alias ga='git add .'
+alias gd='git diff'
+alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push'
 alias gpl='git pull'
