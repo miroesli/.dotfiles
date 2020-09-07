@@ -1,6 +1,6 @@
-# Pop-os
+# Archlinux
 
-<!--![arch](./images/.png)-->
+<!--![archlinux](./images/archlinux.jpg)-->
 
 ## About
 
@@ -20,6 +20,21 @@ Wallpaper: None
 - tty-clock
 - ranger - file browser
 -->
+
+## Installation
+
+Clone the repo
+
+```sh
+cd ~ && git clone git@github.com:miroesli/dotfiles.git
+```
+
+Install using the script 
+
+**Warning: This will overwrite your existing config currently**
+
+`[./install](./install)`
+
 ## Apps
 
 - Steam - games
