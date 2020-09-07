@@ -51,7 +51,6 @@ Wallpaper: None
 ## Todo
 
 - [ ] Setup global fonts config with something like `fonts-conf`
-- [ ] Configure `i3bar` with `i3blocks`
 - [ ] Setup `neovim` plugins and `~/.vimrc` file
 - [ ] Get graphical file manager like nautilus or thunar
 - [ ] Setup `i3lock`
@@ -64,10 +63,16 @@ Wallpaper: None
 - [ ] xhci-hcd hc dies on reboot
 - [ ] `Zsh` color in linux terminal before startup (startx)
 - [ ] Change `i3` keybinds to `vi` navigation
-- [ ] Consider using `polybar` instead of `i3bar`
+- [x] Consider using `polybar` instead of `i3bar`
 - [ ] Consider using `rofi` instead of `dmenu`
 - [ ] Add `gitconfig`
   - [ ] Set the core.autocrlf and core.editor configs
+  - [ ] Update the git aliases in `.zshrc` to the [git method](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
 - [ ] Examine [terminal optimizations](https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l) 
 - [ ] Create `~/.xsession` file for  setting background and other i3 stuff (see `man i3`)
 - [ ] Fix firefox css not working for config/theme/preferences page
+- [ ] Get compositor for transparency for polybar such as picom
+  - [ ] Fix picom lagging steam games
+- [ ] Add `vifm` configs
+- [ ] Add `joplin` configs
+- [ ] Add `ranger` configs
