@@ -33,7 +33,9 @@ Install using the script
 
 **Warning: This will overwrite your existing config currently**
 
-`[./install](./install)`
+```sh
+./install.sh
+```
 
 ## Apps
 
@@ -66,6 +68,7 @@ Install using the script
 ## Todo
 
 - [ ] Rename this config from `arch` to something more creative
+- [ ] Create better install process with backup current config before overwritting like [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh) installation.
 - [ ] Setup global fonts config with something like `fonts-conf`
 - [ ] Setup `neovim` plugins and `~/.vimrc` file
 - [ ] Get graphical file manager like nautilus or thunar
