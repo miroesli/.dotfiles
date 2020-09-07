@@ -68,6 +68,7 @@ Wallpaper: None
 - [ ] Add `gitconfig`
   - [ ] Set the core.autocrlf and core.editor configs
   - [ ] Update the git aliases in `.zshrc` to the [git method](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
+  - [ ] Setup better diff command default for git diff
 - [ ] Examine [terminal optimizations](https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l) 
 - [ ] Setup vi usage within terminal command
 - [ ] Create `~/.xsession` file for  setting background and other i3 stuff (see `man i3`)
