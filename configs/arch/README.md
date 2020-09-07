@@ -65,6 +65,7 @@ Install using the script
 
 ## Todo
 
+- [ ] Rename this config from `arch` to something more creative
 - [ ] Setup global fonts config with something like `fonts-conf`
 - [ ] Setup `neovim` plugins and `~/.vimrc` file
 - [ ] Get graphical file manager like nautilus or thunar
@@ -81,7 +82,7 @@ Install using the script
 - [x] Consider using `polybar` instead of `i3bar`
 - [ ] Consider using `rofi` instead of `dmenu`
 - [ ] Add `gitconfig`
-  - [ ] Set the core.autocrlf and core.editor configs
+  - [ ] Set the core.autocrlf, merge.tool and core.editor configs
   - [ ] Update the git aliases in `.zshrc` to the [git method](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
   - [ ] Setup better diff command default for git diff
 - [ ] Examine [terminal optimizations](https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l) 
