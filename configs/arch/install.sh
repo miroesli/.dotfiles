@@ -1,6 +1,6 @@
 #!/bin/bash
-configs=(alacritty dunst i3 redshift polybar)
-dots=(.zshrc)
+configs=(alacritty dunst i3 redshift polybar picom nvim)
+dots=(.zshrc .vimrc)
 
 for config in "${configs[@]}"
 do
