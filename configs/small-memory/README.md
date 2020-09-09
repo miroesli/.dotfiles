@@ -1,6 +1,6 @@
 # Among Trees
 
-![pillars-of-creation](./images/among-trees-demo.png)
+![pillars-of-creation](./images/small-memory-demo.png)
 
 ## About
 

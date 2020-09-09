@@ -28,7 +28,7 @@ gaps inner 10
 # gaps bottom 10
 
 # Colors and Background
-set $wallpaper ~/dotfiles/wallpapers/forestlake.png
+set $wallpaper ~/dotfiles/configs/small-memory/images/small-memory.png
 
 # Set colors from Xresources
 # Change 'color7' and 'color2' to whatever colors you want i3 to use 
