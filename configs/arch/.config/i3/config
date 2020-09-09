@@ -20,6 +20,7 @@ for_window [title = "^.*"] border pixel 1
 exec --no-startup-id feh --bg-scale $wallpaper &
 exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh &
 exec --no-startup-id redshift -c ~/.config/redshift/redshift.conf &
+exec --no-startup-id syncthing -no-browser &
 
 # [Lock Screen]
 
