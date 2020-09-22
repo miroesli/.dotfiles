@@ -54,6 +54,10 @@ Install using the script
 - Go
 - Python
 
+## Packages
+
+[PACKAGES.md](./PACKAGES.md)
+
 ## Fonts
 
 - ttf-meslo-nerd-font-powerlevel10k
