@@ -1,139 +1,139 @@
-alacritty 0.5.0-1
-alsa-utils 1.2.3-2
-autoconf 2.69-7
-autofs 5.1.6-2
-automake 1.16.2-3
-base 2-2
-bdf-unifont 13.0.03-1
-binutils 2.35-2
-bison 3.6.4-1
-cmatrix 2.0-2
-cool-retro-term 1.1.1-2
-discord 0.0.12-1
-dmenu 5.0-1
-docker 1:19.03.12-2
-docker-compose 1.27.3-1
-efibootmgr 17-2
-fakeroot 1.24-2
-feh 3.5-1
-firefox 80.0.1-1
-flex 2.6.4-3
-gcc 10.2.0-2
-git 2.28.0-1
-glances 3.1.5-1
-grub 2:2.04-8
-gvfs 1.44.1-4
-htop 3.0.2-1
-i3-gaps 4.18.2-2
-i3lock 2.12-2
-imagemagick 7.0.10.30-1
-inkdrop 5.1.0-1
-joplin 1.0.245-1
-lib32-nvidia-utils 455.23.04-1
-linux 5.8.10.arch1-1
-linux-firmware 20200817.7a30af1-1
-m4 1.4.18-3
-make 4.3-3
-mpd 0.21.26-1
-ncmpcpp 0.8.2-12
-neofetch 7.1.0-1
-neovim 0.4.4-1
-network-manager-applet 1.18.0-1
-networkmanager 1.26.2-1
-nm-connection-editor 1.18.0-1
-noto-fonts 20190926-4
-noto-fonts-cjk 20190409-2
-noto-fonts-emoji 20200916-1
-noto-fonts-extra 20190926-4
-nvidia 455.23.04-1
-nvidia-settings 455.23.04-1
-obs-studio 25.0.8-2
-openssh 8.3p1-4
-pacman-contrib 1.4.0-1
-patch 2.7.6-8
-pkgconf 1.7.3-1
-polybar 3.4.3-2
-pulseaudio 13.0-3
-pulseaudio-alsa 1:1.2.2-2
-ranger 1.9.3-2
-redshift 1.12-3
-reflector 2020.9-1
-rofi 1.6.0-1
-siji-git r23.c691f20-2
-steam 1.0.0.66-1
-stow 2.3.1-3
-sudo 1.9.2-1
-syncthing 1.9.0-1
-syncthing-gtk 1:0.9.4.4-2
-texinfo 6.7-3
-texlive-core 2020.55416-1
-texlive-fontsextra 2020.55407-1
-thunar 1.8.15-1
-thunar-volman 0.9.5-3
-thunderbird 68.12.0-1
-ttf-dejavu 2.37+18+g9b5d1b2f-2
-ttf-liberation 2.1.1-1
-ttf-meslo-nerd-font-powerlevel10k 1.000-3
-ttf-opensans 1.101-2
-udisks2 2.9.1-1
-unzip 6.0-14
-vi 1:070224-4
-vifm 0.10.1-3
-vim 8.2.1704-1
-vlc 3.0.11.1-2
-wget 1.20.3-3
-xdg-user-dirs 0.17-3
-xf86-video-vesa 2.4.0-3
-xorg-bdftopcf 1.1-2
-xorg-docs 1.7.1-3
-xorg-font-util 1.3.2-2
-xorg-fonts-100dpi 1.0.3-7
-xorg-fonts-75dpi 1.0.3-7
-xorg-fonts-encodings 1.0.5-2
-xorg-iceauth 1.0.8-2
-xorg-luit 1.1.1-4
-xorg-mkfontscale 1.2.1-2
-xorg-server 1.20.9-2
-xorg-server-common 1.20.9-2
-xorg-server-devel 1.20.9-2
-xorg-server-xephyr 1.20.9-2
-xorg-server-xnest 1.20.9-2
-xorg-server-xvfb 1.20.9-2
-xorg-server-xwayland 1.20.9-2
-xorg-sessreg 1.1.2-2
-xorg-setxkbmap 1.3.2-2
-xorg-smproxy 1.0.6-3
-xorg-x11perf 1.6.1-2
-xorg-xauth 1.1-2
-xorg-xbacklight 1.2.3-2
-xorg-xcmsdb 1.0.5-3
-xorg-xcursorgen 1.0.7-2
-xorg-xdpyinfo 1.3.2-4
-xorg-xdriinfo 1.0.6-2
-xorg-xev 1.2.4-1
-xorg-xgamma 1.0.6-3
-xorg-xhost 1.0.8-2
-xorg-xinit 1.4.1-2
-xorg-xinput 1.6.3-2
-xorg-xkbcomp 1.4.3-1
-xorg-xkbevd 1.1.4-3
-xorg-xkbutils 1.0.4-4
-xorg-xkill 1.0.5-2
-xorg-xlsatoms 1.1.3-2
-xorg-xlsclients 1.1.4-2
-xorg-xmodmap 1.0.10-2
-xorg-xpr 1.0.5-2
-xorg-xprop 1.2.4-2
-xorg-xrandr 1.5.1-2
-xorg-xrdb 1.2.0-2
-xorg-xrefresh 1.0.6-2
-xorg-xset 1.2.4-2
-xorg-xsetroot 1.1.2-2
-xorg-xvinfo 1.1.4-2
-xorg-xwd 1.0.7-2
-xorg-xwininfo 1.1.5-2
-xorg-xwud 1.0.5-2
-xreader 2.6.4-1
-yay 10.0.4-1
-zsh 5.8-1
-zsh-theme-powerlevel10k-git r3715.6221309-1
+alacritty
+alsa-utils
+autoconf
+autofs
+automake
+base
+bdf-unifont
+binutils
+bison
+cmatrix
+cool-retro-term
+discord
+dmenu
+docker
+docker-compose
+efibootmgr
+fakeroot
+feh
+firefox
+flex
+gcc
+git
+glances
+grub
+gvfs
+htop
+i3-gaps
+i3lock
+imagemagick
+inkdrop
+joplin
+lib32-nvidia-utils
+linux
+linux-firmware
+m4
+make
+mpd
+ncmpcpp
+neofetch
+neovim
+network-manager-applet
+networkmanager
+nm-connection-editor
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra
+nvidia
+nvidia-settings
+obs-studio
+openssh
+pacman-contrib
+patch
+pkgconf
+polybar
+pulseaudio
+pulseaudio-alsa
+ranger
+redshift
+reflector
+rofi
+siji-git
+steam
+stow
+sudo
+syncthing
+syncthing-gtk
+texinfo
+texlive-core
+texlive-fontsextra
+thunar
+thunar-volman
+thunderbird
+ttf-dejavu
+ttf-liberation
+ttf-meslo-nerd-font-powerlevel10k
+ttf-opensans
+udisks2
+unzip
+vi
+vifm
+vim
+vlc
+wget
+xdg-user-dirs
+xf86-video-vesa
+xorg-bdftopcf
+xorg-docs
+xorg-font-util
+xorg-fonts-100dpi
+xorg-fonts-75dpi
+xorg-fonts-encodings
+xorg-iceauth
+xorg-luit
+xorg-mkfontscale
+xorg-server
+xorg-server-common
+xorg-server-devel
+xorg-server-xephyr
+xorg-server-xnest
+xorg-server-xvfb
+xorg-server-xwayland
+xorg-sessreg
+xorg-setxkbmap
+xorg-smproxy
+xorg-x11perf
+xorg-xauth
+xorg-xbacklight
+xorg-xcmsdb
+xorg-xcursorgen
+xorg-xdpyinfo
+xorg-xdriinfo
+xorg-xev
+xorg-xgamma
+xorg-xhost
+xorg-xinit
+xorg-xinput
+xorg-xkbcomp
+xorg-xkbevd
+xorg-xkbutils
+xorg-xkill
+xorg-xlsatoms
+xorg-xlsclients
+xorg-xmodmap
+xorg-xpr
+xorg-xprop
+xorg-xrandr
+xorg-xrdb
+xorg-xrefresh
+xorg-xset
+xorg-xsetroot
+xorg-xvinfo
+xorg-xwd
+xorg-xwininfo
+xorg-xwud
+xreader
+yay
+zsh
+zsh-theme-powerlevel10k-git
