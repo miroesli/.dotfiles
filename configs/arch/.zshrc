@@ -11,6 +11,9 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="/home/miroesli/.oh-my-zsh"
 
+# FZF export
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -119,7 +122,7 @@ alias pacr='sudo pacman -Rsn' #Remove package
 alias pacs='/usr/bin/pacman -Ss' #List packages
 alias paci='/usr/bin/pacman -Si' #Package Information
 alias pacei='/usr/bin/pacman -Qe' #Explicitly installed packages
-alias pacsi='pacman -Qei | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h' #Explicitly installed with size
+alias pacsi='LC_ALL=C pacman -Qi | awk '\''/^Name/{name=$3} /^Installed Size/{print $4$5, name}'\'' | sort -h' #Explicitly installed with size
 alias pacso='/usr/bin/pacman -Qdtq' #List all orphans
 alias music='ncmpcpp' #run mpd client
 # Git
