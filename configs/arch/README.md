@@ -71,16 +71,18 @@ Install using the script
 
 ## Todo
 
-- [ ] Rename this config from `arch` to something more creative
-- [ ] Create better install process with backup current config before overwritting like [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh) installation.
+- [x] Rename this config from `arch` to something more creative
+- [ ] Create better install process with backup current config before overwritting like [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh) installation.	
+  - [ ] Add dotfiles to usb to be able to setup machine with shortcuts
 - [ ] Setup global fonts config with something like `fonts-conf`
-- [ ] Setup `neovim` plugins and `~/.vimrc` file
+- [x] Setup `neovim` plugins and `~/.vimrc` file
 - [ ] Get graphical file manager like nautilus or thunar
+  - [ ] get a dark theme
 - [ ] Setup `i3lock`
-- [ ] Use `vi` in alacritty
+- [x] Use `vi` in alacritty
 - [ ] Fix dmenu configuration
 - [ ] Setup `rofi` menus
-- [ ] Add background
+- [x] Add background
 - [ ] Setup global colouring
 - [ ] Fix keyboard not typing on start terminal for ~2s if no display maanger set
 - [ ] xhci-hcd hc dies on reboot
@@ -88,9 +90,9 @@ Install using the script
 - [ ] Change `i3` keybinds to `vi` navigation
 - [x] Consider using `polybar` instead of `i3bar`
 - [ ] Consider using `rofi` instead of `dmenu`
-- [ ] Add `gitconfig`
+- [x] Add `gitconfig`
   - [ ] Set the core.autocrlf, merge.tool (see existing tools using `git mergetool --tool-help`) and core.editor configs 
-  - [ ] Update the git aliases in `.zshrc` to the [git method](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
+  - [x] Update the git aliases in `.zshrc` to the [git method](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
   - [ ] Setup better diff command default for git diff
 - [ ] Examine [terminal optimizations](https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l) 
 - [ ] Setup vi usage within terminal command
@@ -99,5 +101,8 @@ Install using the script
 - [ ] Get compositor for transparency for polybar such as picom
   - [ ] Fix picom lagging steam games
 - [ ] Add `vifm` configs
-- [ ] Add `joplin` configs
+- [x] Add `joplin` configs
 - [ ] Add `ranger` configs
+- [ ] Add additional configurations to nvim
+  - [ ] Read [Ultimate vimrc](https://github.com/amix/vimrc)
+  - [ ] Read `:help options` in nvim
