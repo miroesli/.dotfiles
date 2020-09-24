@@ -4,12 +4,4 @@
 [pull]
 	rebase = false
 [core]
-		editor = nvim
-[alias]
-		gs = status
-		gd = diff
-		ga = add
-		gc = commit -m
-		gp = push
-		gpl = pull
-		gcl = clone
+    editor = nvim
