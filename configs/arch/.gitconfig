@@ -1,0 +1,15 @@
+[user]
+	email = 17695280+miroesli@users.noreply.github.com
+	name = miroesli
+[pull]
+	rebase = false
+[core]
+		editor = nvim
+[alias]
+		gs = status
+		gd = diff
+		ga = add
+		gc = commit -m
+		gp = push
+		gpl = pull
+		gcl = clone
