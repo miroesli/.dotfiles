@@ -74,6 +74,8 @@ Install using the script
 - [x] Rename this config from `arch` to something more creative
 - [ ] Create better install process with backup current config before overwritting like [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh) installation.	
   - [ ] Add dotfiles to usb to be able to setup machine with shortcuts
+  - [ ] Install necessary packages when running dotfiles install
+  - [ ] add selective install
 - [ ] Setup global fonts config with something like `fonts-conf`
 - [x] Setup `neovim` plugins and `~/.vimrc` file
 - [ ] Get graphical file manager like nautilus or thunar
@@ -106,3 +108,17 @@ Install using the script
 - [ ] Add additional configurations to nvim
   - [ ] Read [Ultimate vimrc](https://github.com/amix/vimrc)
   - [ ] Read `:help options` in nvim
+  - [ ] Check out [command-t](https://github.com/wincent/command-t)
+  - [ ] Add [YCM](https://github.com/ycm-core/YouCompleteMe#installation)
+  - [ ] Check out [vim-peekaboo](https://github.com/junegunn/vim-peekaboo)
+  - [ ] Check out [vim-test](https://github.com/junegunn/vim-peekaboo)
+  - [ ] Check out [coc.vim](https://github.com/neoclide/coc.nvim)
+  - [ ] Compare [vim-commentary](https://github.com/tpope/vim-commentary) with nerdcommenter
+  - [ ] Check out [vim-fugitive](https://github.com/tpope/vim-fugitive)
+  - [ ] Check out [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
+  - [ ] Check out [vim-eunuch](https://github.com/tpope/vim-eunuch)
+  - [ ] Check out [ale](https://github.com/dense-analysis/ale)
+  - [ ] Check out [vim-easymotion](https://github.com/easymotion/vim-easymotion)
+  - [ ] Check out [deoplete.nvim](https://github.com/Shougo/deoplete.nvim)
+  - [ ] Check out [moving current window between tabs](https://vim.fandom.com/wiki/Move_current_window_between_tabs)
+  - [ ] Check out [tabnine](https://github.com/codota/TabNine)-[vim](https://github.com/codota/tabnine-vim)

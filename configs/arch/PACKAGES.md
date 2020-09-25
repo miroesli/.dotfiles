@@ -7,6 +7,7 @@ base
 bdf-unifont
 binutils
 bison
+cmake
 cmatrix
 cool-retro-term
 discord
@@ -15,9 +16,11 @@ docker
 docker-compose
 efibootmgr
 fakeroot
+fd
 feh
 firefox
 flex
+fzf
 gcc
 git
 glances
@@ -59,6 +62,7 @@ ranger
 redshift
 reflector
 rofi
+rust
 siji-git
 steam
 stow
