@@ -252,8 +252,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Workspace 1 browser related
-assign [class="Firefox"] $ws1
-assign [class="kitty|Alacritty"] $ws2
+# assign [class="Firefox"] $ws1
+# assign [class="kitty|Alacritty"] $ws2
 
 # [Info Bar]
 

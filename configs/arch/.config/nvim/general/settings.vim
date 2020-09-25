@@ -2,8 +2,19 @@
 let NERDTreeShowHidden=1
 " Close NERDTree if it is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
+" Rainbow settings
+let g:rainbow_active=1
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 " General settings
 syntax enable					" Enable syntax highlighting
+syntax on						" Turn syntax 
 set encoding=utf-8				" Set the encoding written to file
 set tabstop=4					" Set the size of the tab visually
 set softtabstop=4               " Set the size of the effective tabs	
@@ -25,5 +36,7 @@ set autoindent smartindent		" Make indenting smart and auto
 set showmatch					" Show matching brace
 set visualbell					" Use visual bell (no beeping)
 set cursorline					" Highlight current line
-set clipboard=unnamedplus		" Enable copy paste within and outside vim
+set clipboard+=unnamedplus		" Enable copy paste within and outside vim
 set showcmd						" Show command
+let g:markdown_folding=1		" Enable Markdown Folding
+au FileType markdown setlocal foldlevel=2 " Fold after level 2 on markdown
