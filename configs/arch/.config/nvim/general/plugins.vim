@@ -10,5 +10,6 @@ Plug 'https://github.com/junegunn/fzf.vim' " Fuzzy search
 Plug 'https://github.com/vim-syntastic/syntastic' " Syntax checking
 Plug 'https://github.com/tpope/vim-surround' " Parenthesizing made simple
 Plug 'https://github.com/frazrepo/vim-rainbow' " Rainbow parentheses
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'https://github.com/mbbill/undotree' " Undotree
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense engine for Vim
 call plug#end()

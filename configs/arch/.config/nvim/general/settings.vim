@@ -1,6 +1,6 @@
 " Nerdtree settings
 let NERDTreeShowHidden=1
-" Close NERTree if it is the only window left
+" Close NERDTree if it is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
 " General settings
 syntax enable					" Enable syntax highlighting

@@ -9,3 +9,5 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 " Nerdtree shortcut
 map <C-n> :NERDTreeToggle<CR>
+" Undo Tree Toggle
+nnoremap <F5> :UndotreeToggle<cr>
