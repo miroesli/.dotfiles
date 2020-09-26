@@ -13,5 +13,6 @@ Plug 'https://github.com/kana/vim-smartinput' " Smart input for braces
 Plug 'https://github.com/iamcco/markdown-preview.nvim' " Markdown preview
 Plug 'https://github.com/dkarter/bullets.vim' " Markdown automated bullets and numbering
 Plug 'https://github.com/mbbill/undotree' " Undotree
+Plug 'https://github.com/ryanoasis/vim-devicons' " File type icons
 Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'} " Intellisense engine for Vim
 call plug#end()
