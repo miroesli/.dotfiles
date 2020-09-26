@@ -58,6 +58,8 @@ pkgconf
 polybar
 pulseaudio
 pulseaudio-alsa
+python-pip
+python-virtualenv
 ranger
 redshift
 reflector
