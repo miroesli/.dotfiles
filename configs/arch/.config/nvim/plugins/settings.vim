@@ -1,7 +1,7 @@
 " Nerdtree settings
 let NERDTreeShowHidden=1
 " Close NERDTree if it is the only window left
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
 " Rainbow settings
 let g:rainbow_active=1
 " Syntastic settings
