@@ -1,5 +1,5 @@
 " Where to look for scripts and docs
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
+set runtimepath^=~/.vim runtimepath+=~/.vim/after 
 let &packpath = &runtimepath
 " Install vim-plug if not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -9,7 +9,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 " Initialize configs
 source ~/.vimrc
-source ~/.config/nvim/general/plugins.vim
 source ~/.config/nvim/general/settings.vim
 source ~/.config/nvim/general/shortcuts.vim
-source ~/.config/nvim/themes/basic.vim
+source ~/.config/nvim/plugins/plugins.vim
+source ~/.config/nvim/plugins/settings.vim
+source ~/.config/nvim/themes/theme.vim
