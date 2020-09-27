@@ -123,3 +123,5 @@ Install using the script
   - [ ] Check out [moving current window between tabs](https://vim.fandom.com/wiki/Move_current_window_between_tabs)
   - [ ] Check out [tabnine](https://github.com/codota/TabNine)-[vim](https://github.com/codota/tabnine-vim)
   - [ ] Check out [syntastic](https://github.com/vim-syntastic/syntastic)
+- [ ] Fix opening saved vim session when nerd tree was open. ex: `nvim -S path/to/mks/file.vim`
+- [ ] Add space after comment for `nerdcommenter`
