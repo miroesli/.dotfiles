@@ -41,6 +41,7 @@ mpd
 ncmpcpp
 neofetch
 neovim
+nerd-fonts-complete
 network-manager-applet
 networkmanager
 nm-connection-editor
@@ -141,5 +142,7 @@ xorg-xwininfo
 xorg-xwud
 xreader
 yay
+zathura
+zathura-pdf-poppler
 zsh
 zsh-theme-powerlevel10k-git
