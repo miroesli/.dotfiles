@@ -1,5 +1,5 @@
 #!/bin/bash
-configs=(alacritty dunst i3 redshift polybar picom nvim joplin)
+configs=(alacritty dunst i3 redshift polybar picom nvim joplin zathura)
 dots=(.zshrc .gitconfig)
 
 for config in "${configs[@]}"
