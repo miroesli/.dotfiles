@@ -110,9 +110,11 @@ Install using the script
   - [ ] Read `:help options` in nvim
   - [ ] Check out [command-t](https://github.com/wincent/command-t)
   - [ ] Add [YCM](https://github.com/ycm-core/YouCompleteMe#installation)
+  - [ ] Check out [ncm2 alternative to YCM](https://github.com/ncm2/ncm2)
   - [ ] Check out [vim-peekaboo](https://github.com/junegunn/vim-peekaboo)
   - [ ] Check out [vim-test](https://github.com/junegunn/vim-peekaboo)
   - [ ] Check out [coc.vim](https://github.com/neoclide/coc.nvim)
+	  - [ ] Look at coc plugins such as `coc-explorer` and `coc-prettier`
   - [ ] Compare [vim-commentary](https://github.com/tpope/vim-commentary) with nerdcommenter
   - [ ] Check out [vim-fugitive](https://github.com/tpope/vim-fugitive)
   - [ ] Check out [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
@@ -123,5 +125,7 @@ Install using the script
   - [ ] Check out [moving current window between tabs](https://vim.fandom.com/wiki/Move_current_window_between_tabs)
   - [ ] Check out [tabnine](https://github.com/codota/TabNine)-[vim](https://github.com/codota/tabnine-vim)
   - [ ] Check out [syntastic](https://github.com/vim-syntastic/syntastic)
+  - [ ] Check out [vim-session](https://github.com/xolox/vim-session)
+  - [ ] Check out [vim-workspace](https://github.com/thaerkh/vim-workspace)
 - [ ] Fix opening saved vim session when nerd tree was open. ex: `nvim -S path/to/mks/file.vim`
 - [ ] Add space after comment for `nerdcommenter`
