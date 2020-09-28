@@ -1,7 +1,9 @@
 " General settings
 syntax enable					" Enable syntax highlighting
 syntax on						" Turn syntax 
-set encoding=utf-8				" Set the encoding written to file
+filetype plugin on				" Enable filetype plugins
+set encoding=UTF-8				" Set the encoding written to file
+set termguicolors				" Enables 24-bit RGB color in the terminal UI
 set tabstop=4					" Set the size of the tab visually
 set softtabstop=4               " Set the size of the effective tabs	
 set shiftwidth=4				" Set number of spaces to use for each step of autoindent
@@ -24,5 +26,6 @@ set visualbell					" Use visual bell (no beeping)
 set cursorline					" Highlight current line
 set clipboard+=unnamedplus		" Enable copy paste within and outside vim
 set showcmd						" Show command
+set spell spelllang=en_us		" Enable spelling correction
 let g:markdown_folding=1		" Enable Markdown Folding
 au FileType markdown setlocal foldlevel=2 " Fold after level 2 on markdown
