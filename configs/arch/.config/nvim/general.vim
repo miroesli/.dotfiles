@@ -1,8 +1,14 @@
+"==================
+"
 " General settings
+"
+" =================
+
 syntax enable					" Enable syntax highlighting
 syntax on						" Turn syntax 
 filetype plugin on				" Enable filetype plugins
 set encoding=UTF-8				" Set the encoding written to file
+set relativenumber				" Use relative line numbers
 set termguicolors				" Enables 24-bit RGB color in the terminal UI
 set tabstop=4					" Set the size of the tab visually
 set softtabstop=4               " Set the size of the effective tabs	
@@ -29,3 +35,10 @@ set showcmd						" Show command
 set spell spelllang=en_us		" Enable spelling correction
 let g:markdown_folding=1		" Enable Markdown Folding
 au FileType markdown setlocal foldlevel=2 " Fold after level 2 on markdown
+
+" Shortcuts
+
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
