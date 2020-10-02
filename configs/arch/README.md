@@ -76,6 +76,13 @@ Install using the script
   - [ ] Add dotfiles to usb to be able to setup machine with shortcuts
   - [ ] Install necessary packages when running dotfiles install
   - [ ] add selective install
+  - [ ] Add section to install the packages I have
+  - [ ] Install vim plugins used so that no additional installation is needed
+  - [ ] Add setting up firefox config
+  - [ ] Examine adding firefox extensions through yay instead
+- [ ] Figure out why picom is crashing i3status when restarting with `Mod+Shift+r`
+- [ ] Take a look at [tridactyl](https://github.com/tridactyl/tridactyl), [vim-vixen](https://github.com/ueokande/vim-vixen), [vimium](https://github.com/philc/vimium), [surfingkeys](https://github.com/brookhong/Surfingkeys#switch-tabs) and [firenvim](https://github.com/glacambre/firenvim) for better firefox navigation.
+- [ ] Add docs for setting up secure firefox as shown on [Restore Privacy Website](https://restoreprivacy.com/firefox-privacy/) 
 - [ ] Setup global fonts config with something like `fonts-conf`
 - [x] Setup `neovim` plugins and `~/.vimrc` file
 - [ ] Get graphical file manager like nautilus or thunar
@@ -127,5 +134,7 @@ Install using the script
   - [ ] Check out [syntastic](https://github.com/vim-syntastic/syntastic)
   - [ ] Check out [vim-session](https://github.com/xolox/vim-session)
   - [ ] Check out [vim-workspace](https://github.com/thaerkh/vim-workspace)
-- [ ] Fix opening saved vim session when nerd tree was open. ex: `nvim -S path/to/mks/file.vim`
-- [ ] Add space after comment for `nerdcommenter`
+  - [ ] Focus nerdtree if already open and not focused when open shortcut is used
+- [ ] Fix opening saved vim session when nerd tree was open. eg `nvim -S path/to/mks/file.vim`
+- [x] Add space after comment for `nerdcommenter`
+- [ ] Add [fzf](https://github.com/junegunn/fzf) fuzzy filtering for app search through rofi and dmenu
