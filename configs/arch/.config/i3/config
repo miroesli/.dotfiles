@@ -23,12 +23,12 @@ for_window [title = "^.*"] border pixel 1
 
 # [Startup]
 
-# exec --no-startup-id picom -b --config ~/.config/picom/picom.conf &
+exec --no-startup-id picom -b --config ~/.config/picom/picom.conf &
 exec --no-startup-id feh --bg-scale $wallpaper &
 exec --no-startup-id redshift -c ~/.config/redshift/redshift.conf &
 exec --no-startup-id syncthing -no-browser &
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc &
-# exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh &
+exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh &
 
 # [Lock Screen]
 
@@ -61,7 +61,7 @@ floating_modifier $mod
 
 # start a terminal
 # use i3-sensible-terminal to automatically select
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -154,6 +154,12 @@ bindsym $mod+Ctrl+h workspace prev
 bindsym $mod+Ctrl+l workspace next
 bindsym $mod+Ctrl+Left workspace prev
 bindsym $mod+Ctrl+Right workspace next
+
+# move workspace to another output
+bindsym $mod+Shift+Ctrl+h move workspace to output left
+bindsym $mod+Shift+Ctrl+l move workspace to output right
+bindsym $mod+Shift+Ctrl+Left move workspace to output left
+bindsym $mod+Shift+Ctrl+Right move workspace to output right
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -273,12 +279,12 @@ bindsym $mod+r mode "resize"
 
 # [Status Bar]
 
-bar {
-        status_command i3status 
-		tray_output primary
-		position top
-		colors {
-			background #282828
-			statusline #ebdbb2
-		}
-}
+# bar {
+#         status_command i3status
+#         tray_output primary
+#         position top
+#         colors {
+#             background #282828
+#             statusline #ebdbb2
+#         }
+# }
