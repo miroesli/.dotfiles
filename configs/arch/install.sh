@@ -1,15 +1,21 @@
 #!/bin/bash
 
-# - Check if restow can be used on empty dir
-# - Check if stow is actually a hard link
-# Check if backup works correctly
-# does it backup stowed files correctly?
-# does mkdir work correctly?
-# Check that ls -a | grep -w ".profile" doesn't get zprofile as well
+# Check if restow can be used on empty dir - yes
+# Check if stow is actually a hard link - yes and recursively too
+# does mkdir work correctly? - I think so, it is done so that when stowing the dir exists
+
+# Check if backup works correctly - no, mv doesn't work properly
+# does it backup stowed files correctly? Are they still stowed?
+# Check that it gets the exact word - yes?
+# check if works in sh
+# check if can use ls instead of find
+
+# Requires grep and find
 
 exclude_configs=(
 	i3blocks
 	i3status
+	# remove below after
 	alacritty
 	bat
 	dunst
@@ -31,18 +37,19 @@ exclude_configs=(
 exclude_dots=(
 	.bashrc
 	.gitconfig
+	# remove below after
 	.zshrc
 	.xinitrc
-	# .profile
-	# .Xresources
+	.profile
+	.Xresources
 	.p10k.zsh
-	# .zprofile
+	.zprofile
 )
 
 # Default settings
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CONFIGS=$(ls "${BASEDIR}"/.config)
-DOTS=$(find "${BASEDIR}" -type f -name ".[^.]*" -printf "%f ")
+CONFIGS=$(find "${BASEDIR}"/.config/* -maxdepth 0 -type d -printf "%f\n")
+DOTS=$(find "${BASEDIR}" -type f -name ".[^.]*" -printf "%f\n")
 REPO=${REPO:-miroesli/dotfiles}
 REMOTE=${REMOTE:-https://github.com/${REPO}.git}
 
@@ -55,14 +62,13 @@ setup_dotconfigs() {
 	# Select, install, and update configs for packages
 	for config in ${CONFIGS[@]}; do
 		# if config not excluded then install
-		echo "${exclude_configs[@]}" | grep -wq $config
-		if [[ $? -eq 1 ]]; then
+		if ! [[ ${exclude_configs[*]} =~ (^|[[:space:]])"$config"($|[[:space:]]) ]]; then
 			if [ ${BACKUP} = yes ]; then
 				if [ -d ~/.config/$config ]; then
 					echo "Found old ${config} config. Backing up to ~/.config/${config}-$(date +%Y-%m-%d_%H-%M-%S).bak."
 					OLD_CONFIG="~/.config/${config}-$(date +%Y-%m-%d_%H-%M-%S).bak"
 					echo $OLD_CONFIG
-					# mv ~/.config/$config "$OLD_CONFIG"
+					mv ~/.config/$config "$OLD_CONFIG"
 				fi
 			fi
 			if [ ${VERBOSE} = yes ]; then
@@ -86,14 +92,13 @@ setup_dots() {
 	# Select and update dots
 	for dot in ${DOTS[@]}; do
 		# if config not excluded then install
-		echo "${exclude_dots[@]}" | grep -wqo $dot
-		if [[ $? -eq 1 ]]; then
+		if ! [[ ${exclude_dots[*]} =~ (^|[[:space:]])"$dot"($|[[:space:]]) ]]; then
 			if [ ${BACKUP} = yes ]; then
 				if [ -f ${BASEDIR}/$dot ] || [ -h ${BASEDIR}/$dot ]; then
 					echo "Found old ${dot} file. Backing up to ~/${dot}-$(date +%Y-%m-%d_%H-%M-%S).bak."
 					OLD_DOT="~/${dot}-$(date +%Y-%m-%d_%H-%M-%S).bak"
 					echo $OLD_DOT
-					# mv ~/$dot "$OLD_DOT"
+					mv ~/$dot $OLD_DOT
 				fi
 			fi
 			if [ ${VERBOSE} = yes ]; then
