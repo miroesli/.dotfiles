@@ -23,7 +23,11 @@ Plug 'https://github.com/itchyny/lightline.vim' " Status line
 Plug 'https://github.com/airblade/vim-gitgutter' " Git diff in sign column
 Plug 'https://github.com/frazrepo/vim-rainbow' " Rainbow parentheses 
 Plug 'https://github.com/norcalli/nvim-colorizer.lua' " Color highlighter
-Plug 'https://github.com/iamcco/markdown-preview.nvim' " Markdown preview
+Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " Markdown preview
+Plug 'https://github.com/mzlogin/vim-markdown-toc' " Generate TOC
+Plug 'https://github.com/godlygeek/tabular' " Align text
+" Plug 'https://github.com/plasticboy/vim-markdown' " Vim markdown highlighting, syntax and rules
+Plug 'https://github.com/sheerun/vim-polyglot' " On demand language pack
 Plug 'https://github.com/dkarter/bullets.vim' " Markdown automated bullets and numbering
 Plug 'https://github.com/morhetz/gruvbox' " Gruvbox theme 
 call plug#end()
@@ -33,6 +37,9 @@ call plug#end()
 let g:rainbow_active = 1
 lua require'colorizer'.setup()
 let NERDTreeShowHidden = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeIgnore = []
+let g:NERDTreeStatusline = ''
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " Close NERDTree if it is the only window left
 let g:NERDSpaceDelims = 1 " Add spaces after comment delimiters by default
 let g:NERDCompactSexyComs = 1 " Use compact syntax for prettified multi-line comments
@@ -65,10 +72,23 @@ let g:fzf_colors =
 
 nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 " nmap <C-b> :CocCommand explorer<CR>
-noremap <F5> :UndotreeToggle<CR>
+noremap <F5> :UndotreeToggle<CR> :UndotreeFocus<CR>
 nnoremap <silent> <Leader>p :FZF<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
 nnoremap <silent> <Leader>f :Rg<CR>
 nmap <C-_> <leader>c<Space>
 vmap <C-_> <leader>c<Space>
 " noremap <C-_> :Commentary<CR> 
+" open new split panes to right and below
+set splitright
+set splitbelow
+" turn terminal to normal mode with escape
+tnoremap <Esc> <C-\><C-n>:q!<CR>
+" start terminal in insert mode
+" au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+" open terminal on \+t
+function! OpenTerminal()
+  split term://zsh
+  resize 10
+endfunction
+nnoremap <silent> <leader>t :call OpenTerminal()<CR>i
