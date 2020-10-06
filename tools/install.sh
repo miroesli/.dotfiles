@@ -1,6 +1,7 @@
 #!/bin/sh
 # Example from https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh
 # Requires grep and find for copying, and stow and ln for creating links
+# Assumes that grep, find and ln are already installed currently
 #
 # Script can be run in 3 ways:
 # curl: sh -c "$(curl -fsSL https://raw.githubusercontent.com/miroesli/dotfiles/master/tools/install.sh)"
@@ -28,11 +29,6 @@
 # or:
 #   sh -c "$(curl -fsSL https://raw.githubusercontent.com/miroesli/dotfiles/master/tools/install.sh)" "" --verbose
 #
-
-# does it backup stowed files correctly? Are they still stowed?
-# Check that it gets the exact word - yes?
-# check if works in sh
-# check if can use ls instead of find
 
 exclude_configs=(
 	i3blocks
@@ -193,10 +189,20 @@ main() {
 		esac
 		shift
 	done
+
+	# setup colors for output
 	setup_colors
 
+	# print backup and link parameters selected
 	if [ ${VERBOSE} = yes ]; then
 		echo "${BOLD}BACKUP: ${BACKUP}, LINK: ${LINK}" 
+	fi
+
+	if [ ${LINK} = yes ]; then
+		command_exists stow || {
+			error "stow is not installed"
+			exit 1
+		}
 	fi
 
 	if ! [ -d "$DOTFILES" ]; then
