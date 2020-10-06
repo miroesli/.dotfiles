@@ -152,13 +152,13 @@ For the same firefox setup, just install the following.
 <details open>
   <summary>Pillars-of-Creation (March 2020 - August 2020)</summary>
 
-![pillars-of-creation-demo](./pillars-of-creation/images/pillars-of-creation-demo.png)
+![pillars-of-creation-demo](./configs/pillars-of-creation/images/pillars-of-creation-demo.png)
 </details>
 
 <details open>
   <summary>Small-Memory (October 2019 - March 2020)</summary>
 
-![small-memory-demo](./small-memory/images/small-memory-demo.png)
+![small-memory-demo](./configs/small-memory/images/small-memory-demo.png)
 </details>
 
 ## :computer: Contributing

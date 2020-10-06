@@ -23,7 +23,7 @@ for_window [title = "^.*"] border pixel 5
 
 # [Startup]
 
-exec --no-startup-id picom -b --config ~/.config/picom/picom.conf &
+# exec --no-startup-id picom -b --config ~/.config/picom/picom.conf &
 exec --no-startup-id feh --bg-scale $wallpaper &
 exec --no-startup-id redshift -c ~/.config/redshift/redshift.conf &
 exec --no-startup-id syncthing -no-browser &
