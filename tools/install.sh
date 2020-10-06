@@ -199,7 +199,7 @@ main() {
 		echo "${BOLD}BACKUP: ${BACKUP}, LINK: ${LINK}" 
 	fi
 
-	if ! [ -d "$DOTFILES/test" ]; then
+	if ! [ -d "$DOTFILES" ]; then
 		echo "${GREEN}Cloning dotfiles...${RESET}"
 		setup_dotfiles
 	fi
