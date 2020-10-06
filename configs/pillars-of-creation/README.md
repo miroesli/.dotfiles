@@ -14,25 +14,9 @@ Wallpaper: [Nasa Pillars of Creation](https://images.unsplash.com/photo-14623324
 
 ## Tools in Screenshot
 
-- htop - Resource usage viewer
-- neofetch - CLI system info viewer
-- cava - sound visualizer
-- tty-clock
-- ranger - file browser
+- [htop](https://github.com/hishamhm/htop) - Resource usage viewer
+- [neofetch](https://github.com/dylanaraps/neofetch) - CLI system info viewer
+- [cava](https://github.com/karlstav/cava) - sound visualizer
+- [tty-clock](https://github.com/xorg62/tty-clock) - clock
+- [ranger](https://github.com/ranger/ranger) - file browser
 
-## Apps
-
-- Discord
-- Spotify
-- Steam
-- Signal
-- Slack
-- Firefox
-- Vscodium
-- htop
-- Zoom
-
-## Languages
-
-- Go
-- Python

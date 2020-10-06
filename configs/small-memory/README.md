@@ -81,7 +81,7 @@ Wallpaper Manager: [python-pywal](https://github.com/dylanaraps/pywal)\
 
 ### AUR packages
 
-See [General Tips](GENERAL_TIPS.md) on how to install an AUR package or install with `$ makepkg -si`.
+See [General Tips](../../docs/GENERAL_TIPS.md) on how to install an AUR package or install with `$ makepkg -si`.
 
 | Package Name                                                                     | Description | Install |
 | -------------------------------------------------------------------------------- | ----------- | ------- |
