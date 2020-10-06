@@ -15,8 +15,8 @@ set $wallpaper ~/dotfiles/configs/arch/images/arch.jpg
 
 # Font for window titles. 
 font pango:monospace 11
-for_window [class = "^.*"] border pixel 1
-for_window [title = "^.*"] border pixel 1
+for_window [class = "^.*"] border pixel 0
+for_window [title = "^.*"] border pixel 5
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -195,7 +195,7 @@ smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-#smart_borders on
+smart_borders on
 hide_edge_borders smart
 
 # Press $mod+Shift+g to enter the gap mode. 
