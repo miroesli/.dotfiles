@@ -4,6 +4,7 @@ autoconf
 autofs
 automake
 base
+bat
 bdf-unifont
 binutils
 bison
