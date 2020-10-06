@@ -196,12 +196,22 @@ main() {
 	setup_colors
 
 	if [ ${VERBOSE} = yes ]; then
-		echo "${BOLD}BACKUP: ${BACKUP}, LINK: ${LINK}${RESET}" 
+		echo "${BOLD}BACKUP: ${BACKUP}, LINK: ${LINK}" 
 	fi
 
-	if ! [ -d "$BASEDIR" ] && [ -d "$DOTFILES"]; then
-		setup_dotfiles
+	if ! [ -d "$BASEDIR" ]; then
+		if [ -d "$DOTFILES" ]; then
+			echo "Setting BASEDIR to $DOTFILES"
+			BASEDIR=$DOTFILES
+			echo "BASEDIR: ${BASEDIR}"
+		else
+			echo "${GREEN}Setting up dotfiles...${RESET}"
+			# setup_dotfiles
+		fi
+	else 
+		echo "BASEDIR: ${BASEDIR}"
 	fi
+	printf "$RESET"
 	
 	read -p 'Dotfile name: ' dotname
 	if [ -d ${BASEDIR}/$dotname ]; then
