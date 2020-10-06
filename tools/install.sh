@@ -8,7 +8,7 @@
 # fetch: sh -c "$(fetch -o - https://raw.githubusercontent.com/miroesli/dotfiles/master/tools/install.sh)"
 # 
 # Respects the following environment variables:
-#   DOTFILES - Path to the dotfiles repository folder (default: $HOME/.oh-my-zsh)
+#   DOTFILES - Path to the dotfiles repository folder (default: $HOME/.dotfiles)
 #   BASEDIR  - The base directory of the installation script
 #   REPO     - name of the GitHub repo to install from (default: miroesli/dotfiles)
 #   REMOTE   - full remote URL of the git repo to install (default: GitHub via HTTPS)
@@ -45,8 +45,8 @@ exclude_dots=(
 )
 
 # Default settings
-DOTFILES=${DOTFILES:-~/dotfiles}
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")"/../ && pwd)"
+DOTFILES=${DOTFILES:-$HOME/.dotfiles}
+# BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")"/../ && pwd)"
 REPO=${REPO:-miroesli/dotfiles}
 REMOTE=${REMOTE:-https://github.com/${REPO}.git}
 BRANCH=${BRANCH:-master}
@@ -133,12 +133,12 @@ setup_dotconfigs() {
 			# Link or copy package
 			printf "$BLUE"
 			if [ ${LINK} = yes ]; then
-				stow -vt $HOME/.config/$config -d ${BASEDIR}/$dotname/.config -S $config
+				stow -vt $HOME/.config/$config -d ${DOTFILES}/configs/$dotname/.config -S $config
 			else
 				if [ ${VERBOSE} = yes ]; then
-					echo "Copying ${config}: ${BASEDIR}/$dotname/.config/${config} --> $HOME/.config/${config}"
+					echo "Copying ${config}: ${DOTFILES}/configs/$dotname/.config/${config} --> $HOME/.config/${config}"
 				fi
-				cp -r ${BASEDIR}/$dotname/.config/$config $HOME/.config
+				cp -r ${DOTFILES}/configs/$dotname/.config/$config $HOME/.config
 			fi
 			printf "$RESET"
 		fi
@@ -170,13 +170,13 @@ setup_dots() {
 			# Link or copy file
 			printf "$BLUE"
 			if [ ${LINK} = yes ]; then
-				echo ${BASEDIR}/$dotname/$dot $HOME/$dot
-				ln ${BASEDIR}/$dotname/$dot $HOME/$dot
+				echo ${DOTFILES}/configs/$dotname/$dot $HOME/$dot
+				ln ${DOTFILES}/configs/$dotname/$dot $HOME/$dot
 			else
 				if [ ${VERBOSE} = yes ]; then
-					echo "Copying ${dot}: ${BASEDIR}/$dotname/${dot} --> $HOME/${dot}"
+					echo "Copying ${dot}: ${DOTFILES}/configs/$dotname/${dot} --> $HOME/${dot}"
 				fi
-				cp ${BASEDIR}/$dotname/$dot ~
+				cp ${DOTFILES}/configs/$dotname/$dot ~
 			fi
 			printf "$RESET"
 		fi
@@ -199,30 +199,24 @@ main() {
 		echo "${BOLD}BACKUP: ${BACKUP}, LINK: ${LINK}" 
 	fi
 
-	if ! [ -d "$BASEDIR" ]; then
-		if [ -d "$DOTFILES" ]; then
-			echo "Setting BASEDIR to $DOTFILES"
-			BASEDIR=$DOTFILES
-			echo "BASEDIR: ${BASEDIR}"
-		else
-			echo "${GREEN}Setting up dotfiles...${RESET}"
-			# setup_dotfiles
-		fi
-	else 
-		echo "BASEDIR: ${BASEDIR}"
+	if ! [ -d "$DOTFILES/test" ]; then
+		echo "${GREEN}Cloning dotfiles...${RESET}"
+		setup_dotfiles
 	fi
 	printf "$RESET"
 	
 	read -p 'Dotfile name: ' dotname
-	if [ -d ${BASEDIR}/$dotname ]; then
+	if [ -d ${DOTFILES}/configs/$dotname ]; then
 		echo "${GREEN} Installing $dotname...${RESET}"
 	else
-		error "Dotfile \"$dotname\" doesn't exist."
+		echo "${RED}Dotfile \"$dotname\" doesn't exist."
+		echo "Select one of the following:${RESET}"
+		find "${DOTFILES}"/configs/* -maxdepth 0 -type d -printf "%f\n"
         exit 1
 	fi
 
-	CONFIGS=$(find "${BASEDIR}"/$dotname/.config/* -maxdepth 0 -type d -printf "%f\n")
-	DOTS=$(find "${BASEDIR}"/$dotname/ -type f -name ".[^.]*" -printf "%f\n")
+	CONFIGS=$(find "${DOTFILES}"/configs/$dotname/.config/* -maxdepth 0 -type d -printf "%f\n")
+	DOTS=$(find "${DOTFILES}"/configs/$dotname/ -type f -name ".[^.]*" -printf "%f\n")
 
 	if [ ${VERBOSE} = yes ]; then
 		echo $CONFIGS
