@@ -171,7 +171,7 @@ setup_dots() {
 			printf "$BLUE"
 			if [ ${LINK} = yes ]; then
 				echo ${BASEDIR}/$dotname/$dot $HOME/$dot
-				#ln ${BASEDIR}/$dotname/$dot $HOME/$dot
+				ln ${BASEDIR}/$dotname/$dot $HOME/$dot
 			else
 				if [ ${VERBOSE} = yes ]; then
 					echo "Copying ${dot}: ${BASEDIR}/$dotname/${dot} --> $HOME/${dot}"
@@ -220,8 +220,8 @@ main() {
 	fi
 
 	# Future work to add selecting package and dot exclusions
-	#setup_dotconfigs
-	#setup_dots
+	setup_dotconfigs
+	setup_dots
 	echo "${GREEN}Done... Configs Installed!${RESET}"
 }
 
