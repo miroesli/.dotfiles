@@ -40,20 +40,22 @@ font-0 = "fixed:pixelsize=10;1"
 font-1 = "unifont:fontformat=truetype:size=8:antialias=false;0"
 font-2 = "siji:pixelsize=10;1"
 
-modules-left = i3 xwindow ;bspwm
+; modules-left = bspwm
+modules-left = i3 xwindow
 modules-center = mpd
-modules-right = filesystem pacyay pulseaudio memory cpu wlan nm-applet battery date powermenu
+modules-right = filesystem pacyay pulseaudio memory cpu wlan battery date powermenu
 
 tray-position = right
 tray-padding = 2
+tray-detached = false
 ;tray-background = #0063ff
 
 ; wm-restack = bspwm
 ; wm-restack = i3
 ; override-redirect = true
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+; scroll-up = i3wm-wsnext
+; scroll-down = i3wm-wsprev
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
@@ -248,11 +250,12 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
+date = %Y-%m-%d
+date-alt = %A, %d %B %Y
 
 time = %H:%M
-time-alt = %H:%M:%S
+time-alt = %H:%M
+; time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
@@ -267,7 +270,7 @@ interval = 5
 
 format-volume-prefix =" "
 ; format-volume = <label-volume> <bar-volume>
-format-volume = <ramp-volume>
+format-volume = <label-volume> <ramp-volume>
 ; label-volume = VOL %percentage%%
 label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}

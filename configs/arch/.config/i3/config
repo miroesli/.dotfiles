@@ -11,7 +11,7 @@
 
 set $mod Mod1
 set $super Mod4
-set $wallpaper ~/dotfiles/configs/arch/images/arch.jpg
+set $wallpaper ~/.dotfiles/configs/arch/images/arch.jpg
 
 # Font for window titles. 
 font pango:monospace 11
