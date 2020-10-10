@@ -12,6 +12,8 @@
 
 ---
 
+![License](https://img.shields.io/github/license/miroesli/.dotfiles)
+
 Welcome to my dotfiles! :octocat: A one step installer is provided in the [Installation](#Installation) section below. These configs are also an iterative process and will be continuously improved.
 
 
@@ -74,7 +76,7 @@ In progress...
 - A Unix operating system
 - One of `curl`, `wget`, or `fetch` 
 - `find`, `grep`, and `git` for overall install
-- `stow` and `ln` for hard linking configs and files
+- (optional) `stow` and `ln` for hard linking configs and files
 
 ### :eight_spoked_asterisk: Dotfiles
 
