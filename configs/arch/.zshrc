@@ -113,6 +113,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ## Custom Aliases
+alias startx='startx > $HOME/.Xoutput.log 2>&1' #Save xorg startx log output
 # Pacman
 alias psync='sudo pacman -Syy' #Sync packages
 alias pac='sudo /usr/bin/pacman -S' #Install packages
