@@ -10,7 +10,7 @@
   - [ ] Add setting up firefox config
   - [ ] Examine adding firefox extensions through yay instead
 - [ ] Figure out why picom is crashing i3status when restarting with `Mod+Shift+r`
-- [ ] Take a look at [tridactyl](https://github.com/tridactyl/tridactyl), [vim-vixen](https://github.com/ueokande/vim-vixen), [vimium](https://github.com/philc/vimium), [surfingkeys](https://github.com/brookhong/Surfingkeys#switch-tabs) and [firenvim](https://github.com/glacambre/firenvim) for better firefox navigation.
+- [ ] Take a look at [tridactyl](https://github.com/tridactyl/tridactyl), [vimperator](https://github.com/vimperator/vimperator-labs), [vim-vixen](https://github.com/ueokande/vim-vixen), [vimium](https://github.com/philc/vimium), [surfingkeys](https://github.com/brookhong/Surfingkeys#switch-tabs) and [firenvim](https://github.com/glacambre/firenvim) for better firefox navigation.
 - [ ] Add docs for setting up secure firefox as shown on [Restore Privacy Website](https://restoreprivacy.com/firefox-privacy/) 
 - [ ] Setup global fonts config with something like `fonts-conf`
 - [x] Setup `neovim` plugins and `~/.vimrc` file
