@@ -8,7 +8,6 @@ syntax enable                             " Enable syntax highlighting
 syntax on                                 " Turn syntax
 filetype plugin on                        " Enable filetype plugins
 set encoding=UTF-8                        " Set the encoding written to file
-set guicursor=                            " Set cursor to nothing
 set relativenumber                        " Use relative line numbers
 set termguicolors                         " Enables 24-bit RGB color in the terminal UI
 set tabstop=4                             " Set the size of the tab visually

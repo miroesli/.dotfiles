@@ -11,7 +11,7 @@
 
 set $mod Mod1
 set $super Mod4
-set $wallpaper ~/.dotfiles/configs/arch/images/arch.jpg
+set $wallpaper ~/.dotfiles/configs/arch/images/moss.jpg
 
 # Font for window titles. 
 font pango:monospace 11
@@ -24,7 +24,7 @@ for_window [title = "^.*"] border pixel 5
 # [Startup]
 
 # exec --no-startup-id picom -b --config ~/.config/picom/picom.conf &
-# exec --no-startup-id syncthing -no-browser &
+exec --no-startup-id syncthing -no-browser &
 exec --no-startup-id feh --bg-scale $wallpaper &
 exec --no-startup-id redshift -c ~/.config/redshift/redshift.conf &
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc &
@@ -269,11 +269,13 @@ bindsym $mod+r mode "resize"
 # [Theme]
 
 # class					border  backgr. text    indicator child_border
+# client.focused          #b8bb26 #282828 #ebdbb2 #282828   #b8bb26
 client.focused          #98971a #282828 #ebdbb2 #282828   #98971a 
-client.focused_inactive #d65d0e #282828 #ebdbb2 #282828   #d65d0e 
-client.unfocused        #282828 #282828 #ebdbb2 #282828   #282828
-client.urgent           #cc241d #282828 #ebdbb2 #282828   #cc241d 
-client.placeholder      #ebdbb2 #282828 #ebdbb2 #282828   #ebdbb2 
+# client.focused_inactive #98971a #282828 #ebdbb2 #282828   #98971a
+client.focused_inactive #928374 #282828 #ebdbb2 #282828   #928374 
+client.unfocused        #3c3836 #282828 #ebdbb2 #282828   #3c3836 
+client.urgent           #fb4934 #282828 #ebdbb2 #282828   #fb4934
+client.placeholder      #3c3836 #282828 #ebdbb2 #282828   #ebdbb2 
 
 client.background       #282828
 
