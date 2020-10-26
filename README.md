@@ -10,20 +10,22 @@
   <a href="#contributing">Contributing</a> 
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/github/license/miroesli/.dotfiles" alt="license">
+</p>
+
 ---
 
-![License](https://img.shields.io/github/license/miroesli/.dotfiles)
-
 Welcome to my dotfiles! :octocat: A one step installer is provided in the [Installation](#Installation) section below. These configs are also an iterative process and will be continuously improved.
-
 
 <details open>
 <summary style="font-size:26px"><strong>Table of Contents</strong></summary>
 <!-- vim-markdown-toc GFM -->
 
-* [:page_facing_up: Details](#page_facing_up-details)
 * [:camera: Gallery](#camera-gallery)
-* [:zap: Installation](#zap-installation)
+* [:page_facing_up: Details](#page_facing_up-details)
+* [:eyes: Package Overview](#eyes-package-overview)
+* [:inbox_tray: Installation](#inbox_tray-installation)
   * [:lock: Prerequisites](#lock-prerequisites)
   * [:eight_spoked_asterisk: Dotfiles](#eight_spoked_asterisk-dotfiles)
   * [:postbox: Packages](#postbox-packages)
@@ -36,6 +38,15 @@ Welcome to my dotfiles! :octocat: A one step installer is provided in the [Insta
 
 <!-- vim-markdown-toc -->
 </details>
+
+## :camera: Gallery
+
+The [gruvbox dark mode palette]() by `Pavel Pertsev` is used for the theme.
+
+![gruvbox dark mode palette image](https://camo.githubusercontent.com/cdb2f2e986c564b515c0c698e6c45b4ab5d725a9/687474703a2f2f692e696d6775722e636f6d2f776136363678672e706e67)
+
+In progress...
+<!-- ![arch-demo](./arch/images/arch-demo.png) -->
 
 ## :page_facing_up: Details
 
@@ -59,17 +70,92 @@ Below is a list of the tools I use for my current setup.
 - [**Text Editor**](https://wiki.archlinux.org/index.php/List_of_applications#Text_editors) --- [Neovim](https://wiki.archlinux.org/index.php/Neovim) 
 - [**Web Browser**](https://wiki.archlinux.org/index.php/List_of_applications/Internet#Web_browsers) --- [Firefox](https://wiki.archlinux.org/index.php/Firefox)
 
-## :camera: Gallery
+## :eyes: Package Overview
 
-The [gruvbox dark mode palette]() by `Pavel Pertsev` is used for the theme.
+<details>
+<summary><strong>Interface</strong></summary>
 
-![gruvbox dark mode palette image](https://camo.githubusercontent.com/cdb2f2e986c564b515c0c698e6c45b4ab5d725a9/687474703a2f2f692e696d6775722e636f6d2f776136363678672e706e67)
++ i3wm
++ alacritty
++ polybar
++ feh
 
-In progress...
-<!-- ![arch-demo](./arch/images/arch-demo.png) -->
+</details>
 
+<details>
+<summary><strong>Browser</strong></summary>
 
-## :zap: Installation
++ firefox
++ w3m
++ syncthing-gtk
+
+</details>
+
+<details>
+<summary><strong>Media</strong></summary>
+
++ mpd
++ ncmpcpp
+
+</details>
+
+<details>
+<summary><strong>Office</strong></summary>
+
++ zathura
+  + poppler
++ maim
++ cal
+
+</details>
+
+<details>
+<summary><strong>Programming</strong></summary>
+
++ neovim
+  + vim-plug
+  + fzf
+  + fzf.vim
+  + nerdtree
+  + nerdtree-git-plugin
+  + vim-devicons
+  + nerdcommenter
+  + undotree
+  + lightline
+  + vim-gitgutter
+  + vim-rainbow
+  + nvim-colorizer.lua
+  + markdown-preview.nvim
+  + vim-markdown-toc
+  + tabular
+  + vim-polyglot
+  + bullets.vim
+  + gruvbox
+
+</details>
+
+<details>
+<summary><strong>Utilities</strong></summary>
+
++ zsh
++ rofi
++ ranger
++ yay
++ glances
+
+</details>
+
+<details>
+<summary><strong>Fonts</strong></summary>
+
++ siji-git
++ noto-fonts
+
+</details>
+
+## :inbox_tray: Installation
+
+To install you may manually copy and replace your desired configs, or you may use the installation script given you have the necessary prerequisites. A list of packages and addons used are listed below.
 
 ### :lock: Prerequisites
 
@@ -115,6 +201,7 @@ For the same firefox setup, just install the following.
 - Theme : [gruvbox-true-dark](https://addons.mozilla.org/en-US/firefox/addon/gruvbox-true-dark/)
 - Search Engine: [DuckDuckGo](https://duckduckgo.com/)
 - Add-Ons:
+  - Navigation: [Vimium](https://github.com/philc/vimium)
   - Password Manager: [Bitwarden](https://bitwarden.com/download/)
   - Add/Script Blocker: [uBlockOrigin](https://ublockorigin.com/)
   - Facebook Privacy: [Facebook Container](https://addons.mozilla.org/en-US/firefox/addon/facebook-container/)

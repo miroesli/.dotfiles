@@ -1,5 +1,7 @@
 # Todo
 
+- [ ] Add links to each package used in README
+- [ ] Add screenshot of main setup
 - [x] Rename this config from `arch` to something more creative
 - [ ] Create better install process with backup current config before overwritting like [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh) installation.	
   - [ ] Add dotfiles to usb to be able to setup machine with shortcuts

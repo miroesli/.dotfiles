@@ -18,6 +18,7 @@ docker
 docker-compose
 dunst
 efibootmgr
+element-desktop-git
 fakeroot
 fd
 feh
@@ -28,6 +29,7 @@ fzf
 gcc
 git
 glances
+google-chrome
 grub
 gruvbox-dark-gtk
 gruvbox-dark-icons-gtk
@@ -42,14 +44,17 @@ i3blocks
 i3lock
 i3status
 imagemagick
-inkdrop
 joplin
 keybase-bin
 lib32-nvidia-utils
 linux
 linux-firmware
+linux-lts
+luit
+lutris
 lxappearance
 m4
+maim
 make
 materia-gtk-theme
 mpd
@@ -66,8 +71,9 @@ noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
 nvidia
+nvidia-lts
 nvidia-settings
-obs-studio
+obs-studio-git
 oomox
 openssh
 pacman-contrib
@@ -77,6 +83,7 @@ picom
 piper-git
 pkgconf
 polybar
+powertop
 pulseaudio
 pulseaudio-alsa
 python-pip
@@ -88,7 +95,9 @@ reflector
 ripgrep
 rofi
 rust
+scrot
 siji-git
+sqlitebrowser
 steam
 stow
 sudo
@@ -129,7 +138,6 @@ xorg-fonts-100dpi
 xorg-fonts-75dpi
 xorg-fonts-encodings
 xorg-iceauth
-xorg-luit
 xorg-mkfontscale
 xorg-server
 xorg-server-common
@@ -172,6 +180,7 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 xreader
+xss-lock
 yay
 zathura
 zathura-pdf-poppler
