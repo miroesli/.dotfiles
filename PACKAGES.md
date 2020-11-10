@@ -1,5 +1,6 @@
 alacritty
 alsa-utils
+amd-ucode
 autoconf
 autofs
 automake
@@ -23,6 +24,7 @@ fakeroot
 fd
 feh
 ffmpegthumbnailer
+filemanager-actions
 firefox
 flex
 fzf
@@ -74,12 +76,14 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
+ntfs-3g
 nvidia
 nvidia-lts
 nvidia-settings
 obs-studio-git
 oomox
 openssh
+os-prober
 pacman-contrib
 patch
 pavucontrol
