@@ -66,7 +66,7 @@ mpd
 nautilus
 ncmpcpp
 neofetch
-neovim
+neovim-nightly
 nerd-fonts-complete
 network-manager-applet
 networkmanager
