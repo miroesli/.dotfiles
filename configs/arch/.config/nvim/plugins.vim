@@ -27,6 +27,9 @@ Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#i
 Plug 'https://github.com/mzlogin/vim-markdown-toc' " Generate TOC
 Plug 'https://github.com/godlygeek/tabular' " Align text
 " Plug 'https://github.com/plasticboy/vim-markdown' " Vim markdown highlighting, syntax and rules
+Plug 'https://github.com/neovim/nvim-lspconfig' " Configurations for the nvim lsp client
+Plug 'https://github.com/Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Asychronous completion framework for neovim
+Plug 'https://github.com/Shougo/deoplete-lsp' " LSP completion source for deoplete
 Plug 'https://github.com/ervandew/supertab' " Enabled tab for autocompletion
 Plug 'https://github.com/Chiel92/vim-autoformat' " Autoformatting
 Plug 'https://github.com/sheerun/vim-polyglot' " On demand language pack
@@ -35,8 +38,18 @@ Plug 'https://github.com/jeffkreeftmeijer/vim-numbertoggle' " Smart relative num
 Plug 'https://github.com/morhetz/gruvbox' " Gruvbox theme
 call plug#end()
 
-" Settings
+" setup LSP (IDE features)
 
+lua require'nvim_lsp'.rust_analyzer.setup{}
+" Use LSP omni-completion in Rust files
+autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
+
+" [Settings]
+
+" Enable deoplete autocompletion files
+let g:deoplete#enable_at_startup = 1
+autocmd BufWrite * :Autoformat " Format on write using autoformat
+call deoplete#custom#source('_', 'max_menu_width', 80)
 let g:rainbow_active = 1
 lua require'colorizer'.setup()
 let NERDTreeShowHidden = 1
@@ -71,7 +84,7 @@ let g:fzf_colors =
 			\ 'spinner': ['fg', 'Label'],
 			\ 'header':  ['fg', 'Comment'] }
 
-" Shortcuts
+" [Shortcuts]
 
 nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 " nmap <C-b> :CocCommand explorer<CR>
