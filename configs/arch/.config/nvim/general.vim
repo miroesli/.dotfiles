@@ -6,7 +6,7 @@
 
 syntax enable                             " Enable syntax highlighting
 syntax on                                 " Turn syntax
-filetype plugin on                        " Enable filetype plugins
+filetype plugin indent on				  " Enable filetype plugins and indents
 set encoding=UTF-8                        " Set the encoding written to file
 set relativenumber                        " Use relative line numbers
 set termguicolors                         " Enables 24-bit RGB color in the terminal UI
@@ -35,6 +35,8 @@ set showcmd                               " Show command
 set completeopt=menuone,noinsert,noselect " Show menu on insert and don't autoselect
 set scrolloff=8                           " Default number of lines to keep below and above selection
 set spell spelllang=en_us                 " Enable spelling correction
+set updatetime=50						  " Update quicker, default is 4000ms
+set shortmess+=c						  " Avoid showing message extra message when using completion
 let g:markdown_folding=1                  " Enable Markdown Folding
 au FileType markdown setlocal foldlevel=2 " Fold after level 2 on markdown
 
