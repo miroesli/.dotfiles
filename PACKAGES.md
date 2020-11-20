@@ -19,7 +19,7 @@ docker
 docker-compose
 dunst
 efibootmgr
-element-desktop-git
+element-desktop
 fakeroot
 fd
 feh
@@ -104,6 +104,7 @@ reflector
 ripgrep
 rofi
 rust
+rust-analyzer-git
 scrot
 siji-git
 sqlitebrowser
