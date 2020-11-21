@@ -19,7 +19,7 @@ Plug 'https://github.com/tpope/vim-sensible' " Sensible configuration
 Plug 'https://github.com/tpope/vim-surround' " Parenthesizing made simple
 Plug 'https://github.com/tpope/vim-fugitive' " Git wrapper in neovim
 Plug 'https://github.com/editorconfig/editorconfig-vim' " editorconfig plugin
-" Plug 'https://github.com/jiangmiao/auto-pairs' " Auto pair parenthesizing
+Plug 'https://github.com/jiangmiao/auto-pairs' " Auto pair parenthesizing
 Plug 'https://github.com/mbbill/undotree' " Undotree
 Plug 'https://github.com/itchyny/lightline.vim' " Status line
 Plug 'https://github.com/airblade/vim-gitgutter' " Git diff in sign column
@@ -28,14 +28,14 @@ Plug 'https://github.com/norcalli/nvim-colorizer.lua' " Color highlighter
 Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " Markdown preview
 Plug 'https://github.com/mzlogin/vim-markdown-toc' " Generate TOC
 Plug 'https://github.com/godlygeek/tabular' " Align text
-Plug 'https://github.com/neovim/nvim-lspconfig' " Configurations for the nvim lsp client
-Plug 'https://github.com/nvim-lua/completion-nvim' " Auto completion framework with built-in LSP
 Plug 'https://github.com/dense-analysis/ale' " Async syntax checker with LSP support
-" Plug 'https://github.com/ervandew/supertab' " Enabled tab for autocompletion
 " Plug 'https://github.com/vim-syntastic/syntastic' " Static syntax checking hacks for vim
-" Plug 'https://github.com/neoclide/coc.nvim' " Intellisense engine for neovim
+" Plug 'https://github.com/neovim/nvim-lspconfig' " Configurations for the nvim lsp client
+" Plug 'https://github.com/nvim-lua/completion-nvim' " Auto completion framework with built-in LSP
+" Plug 'https://github.com/ervandew/supertab' " Enabled tab for autocompletion
 " Plug 'https://github.com/Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Asychronous completion framework for neovim
 " Plug 'https://github.com/Shougo/deoplete-lsp' " LSP completion source for deoplete
+" Plug 'https://github.com/neoclide/coc.nvim' " Intellisense engine for neovim
 Plug 'https://github.com/Chiel92/vim-autoformat' " Autoformatting
 Plug 'https://github.com/sheerun/vim-polyglot' " On demand language pack - contains vim-markdown, rust.vim etc.
 Plug 'https://github.com/dkarter/bullets.vim' " Markdown automated bullets and numbering
@@ -47,9 +47,8 @@ call plug#end()
 
 " setup LSP (IDE features)
 autocmd BufWrite * :Autoformat " Format on write using autoformat
-lua require'lspconfig'.rust_analyzer.setup{ on_attach=require'completion'.on_attach }
-" Use LSP omni-completion in Rust files
-" autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
+" add to setup settings later: on_attach=require'completion'.on_attach
+" lua require'lspconfig'.rust_analyzer.setup({on_attach=require'completion'.on_attach})
 
 " Enable deoplete autocompletion files
 " let g:deoplete#enable_at_startup = 1
@@ -98,6 +97,8 @@ noremap <F5> :UndotreeToggle<CR> :UndotreeFocus<CR>
 nnoremap <silent> <Leader>p :FZF<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
 nnoremap <silent> <Leader>f :Rg<CR>
+nnoremap <silent> <leader>gd :ALEGoToDefinition<CR>
+nnoremap <silent> <leader>gf :ALEFix<CR>
 nmap <C-_> <leader>c<Space>
 vmap <C-_> <leader>c<Space>
 " noremap <C-_> :Commentary<CR>
