@@ -33,7 +33,7 @@ Plug 'https://github.com/dense-analysis/ale' " Async syntax checker with LSP sup
 " Plug 'https://github.com/neovim/nvim-lspconfig' " Configurations for the nvim lsp client
 " Plug 'https://github.com/nvim-lua/completion-nvim' " Auto completion framework with built-in LSP
 " Plug 'https://github.com/ervandew/supertab' " Enabled tab for autocompletion
-" Plug 'https://github.com/Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Asychronous completion framework for neovim
+Plug 'https://github.com/Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Asychronous completion framework for neovim
 " Plug 'https://github.com/Shougo/deoplete-lsp' " LSP completion source for deoplete
 " Plug 'https://github.com/neoclide/coc.nvim' " Intellisense engine for neovim
 Plug 'https://github.com/Chiel92/vim-autoformat' " Autoformatting
@@ -46,13 +46,11 @@ call plug#end()
 " [Settings]
 
 " setup LSP (IDE features)
-autocmd BufWrite * :Autoformat " Format on write using autoformat
-" add to setup settings later: on_attach=require'completion'.on_attach
 " lua require'lspconfig'.rust_analyzer.setup({on_attach=require'completion'.on_attach})
 
-" Enable deoplete autocompletion files
-" let g:deoplete#enable_at_startup = 1
-" call deoplete#custom#source('_', 'max_menu_width', 80)
+autocmd BufWrite * :Autoformat " Format on write using autoformat
+let g:deoplete#enable_at_startup = 1 " Enable deoplete autocompletion files
+call deoplete#custom#source('_', 'max_menu_width', 80)
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:ale_linters = {'rust': ['analyzer']}
 let g:rainbow_active = 1
