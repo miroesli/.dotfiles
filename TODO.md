@@ -1,9 +1,10 @@
 # Todo
 
+- [ ] Organize TODO into sections
 - [ ] Add links to each package used in README
 - [ ] Add screenshot of main setup
 - [x] Rename this config from `arch` to something more creative
-- [ ] Create better install process with backup current config before overwritting like [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh) installation.	
+- [ ] Create better install process with backup current config before overwritting like [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh) installation.
   - [ ] Add dotfiles to usb to be able to setup machine with shortcuts
   - [ ] Install necessary packages when running dotfiles install
   - [ ] add selective install
@@ -13,15 +14,16 @@
   - [ ] Examine adding firefox extensions through yay instead
 - [ ] Figure out why picom is crashing i3status when restarting with `Mod+Shift+r`
 - [ ] Take a look at [tridactyl](https://github.com/tridactyl/tridactyl), [vimperator](https://github.com/vimperator/vimperator-labs), [vim-vixen](https://github.com/ueokande/vim-vixen), [vimium](https://github.com/philc/vimium), [surfingkeys](https://github.com/brookhong/Surfingkeys#switch-tabs) and [firenvim](https://github.com/glacambre/firenvim) for better firefox navigation.
-- [ ] Add docs for setting up secure firefox as shown on [Restore Privacy Website](https://restoreprivacy.com/firefox-privacy/) 
+- [ ] Add docs for setting up secure firefox as shown on [Restore Privacy Website](https://restoreprivacy.com/firefox-privacy/)
 - [ ] Setup global fonts config with something like `fonts-conf`
 - [x] Setup `neovim` plugins and `~/.vimrc` file
 - [ ] Get graphical file manager like nautilus or thunar
   - [ ] get a dark theme
-- [ ] Setup `i3lock`
+- [ ] Setup `i3lock` or `betterlockscreen`
 - [x] Use `vi` in alacritty
 - [ ] Fix dmenu configuration
 - [ ] Setup `rofi` menus
+  - [ ] Setup power options and screenshot capture
 - [x] Add background
 - [ ] Setup global colouring
 - [ ] Fix keyboard not typing on start terminal for ~2s if no display maanger set
@@ -31,10 +33,10 @@
 - [x] Consider using `polybar` instead of `i3bar`
 - [ ] Consider using `rofi` instead of `dmenu`
 - [x] Add `gitconfig`
-  - [ ] Set the core.autocrlf, merge.tool (see existing tools using `git mergetool --tool-help`) and core.editor configs 
+  - [ ] Set the core.autocrlf, merge.tool (see existing tools using `git mergetool --tool-help`) and core.editor configs
   - [x] Update the git aliases in `.zshrc` to the [git method](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
   - [ ] Setup better diff command default for git diff
-- [ ] Examine [terminal optimizations](https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l) 
+- [ ] Examine [terminal optimizations](https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l)
 - [ ] Setup vi usage within terminal command
 - [ ] Create `~/.xsession` file for  setting background and other i3 stuff (see `man i3`)
 - [ ] Fix firefox css not working for config/theme/preferences page
@@ -52,7 +54,7 @@
   - [ ] Check out [vim-peekaboo](https://github.com/junegunn/vim-peekaboo)
   - [ ] Check out [vim-test](https://github.com/junegunn/vim-peekaboo)
   - [ ] Check out [coc.vim](https://github.com/neoclide/coc.nvim)
-	  - [ ] Look at coc plugins such as `coc-explorer` and `coc-prettier`
+      - [ ] Look at coc plugins such as `coc-explorer` and `coc-prettier`
   - [ ] Compare [vim-commentary](https://github.com/tpope/vim-commentary) with nerdcommenter
   - [ ] Check out [vim-fugitive](https://github.com/tpope/vim-fugitive)
   - [ ] Check out [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
@@ -69,3 +71,21 @@
 - [ ] Fix opening saved vim session when nerd tree was open. eg `nvim -S path/to/mks/file.vim`
 - [x] Add space after comment for `nerdcommenter`
 - [ ] Add [fzf](https://github.com/junegunn/fzf) fuzzy filtering for app search through rofi and dmenu
+- [ ] Move polybar stats to best locations
+  - [ ] Show cal when pressing date
+  - [ ] Move tray to left?
+  - [ ] have polybar open dunst current song if clicked
+- [ ] Add commenting on empty lines capability to toggle
+- [ ] Fix icons not showing on polybar
+- [ ] setup cava
+- [ ] setup mpd
+- [ ] Test using bspwm to fix problem with vim not showing properly when opening with joplin and only showing correctly if toggling fullscreen in i3
+- [ ] try neomutt mail client
+  - [ ] msmtp mtp client for sending email
+  - [ ] offlineimap for imap client syncing email
+- [ ] try mpv for playing local media
+  - [ ] use beet for music organizer for fetching music metadata and cover art
+  - [ ] cmus music player console
+- [ ] Use dunst for displaying current song instead of using polybar
+- [ ] Add usage and Quick start section to readme of dotfiles
+- [ ] Try specterwm
