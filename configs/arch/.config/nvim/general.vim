@@ -32,6 +32,7 @@ set visualbell                            " Use visual bell (no beeping)
 set cursorline                            " Highlight current line
 set clipboard+=unnamedplus                " Enable copy paste within and outside vim
 set showcmd                               " Show command
+set cmdheight=2							  " Give more space for displaying messages
 set completeopt=menuone,noinsert,noselect " Show menu on insert and don't autoselect
 set scrolloff=8                           " Default number of lines to keep below and above selection
 set spell spelllang=en_us                 " Enable spelling correction

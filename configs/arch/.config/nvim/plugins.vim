@@ -28,18 +28,27 @@ Plug 'https://github.com/norcalli/nvim-colorizer.lua' " Color highlighter
 Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " Markdown preview
 Plug 'https://github.com/mzlogin/vim-markdown-toc' " Generate TOC
 Plug 'https://github.com/godlygeek/tabular' " Align text
+Plug 'https://github.com/lervag/vimtex' " Latex filetype plugin
+Plug 'https://github.com/SirVer/ultisnips' " Snippets
+Plug 'https://github.com/sheerun/vim-polyglot' " On demand language pack - contains vim-markdown, rust.vim etc.
+Plug 'https://github.com/dkarter/bullets.vim' " Markdown automated bullets and numbering
+Plug 'https://github.com/jeffkreeftmeijer/vim-numbertoggle' " Smart relative numbers
+" Plug 'https://github.com/ludovicchabant/vim-gutentags' " Manage tag files
+if has('nvim')
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Asychronous completion framework for neovimhhh
+else
+	Plug 'https://github.com/Shougo/deoplete.nvim'
+	Plug 'https://github.com/roxma/nvim-yarp'
+	Plug 'https://github.com/roxma/vim-hug-neovim-rpc'
+endif
+" Plug 'https://github.com/Shougo/deoplete-lsp' " LSP completion source for deoplete
+" Plug 'https://github.com/neoclide/coc.nvim' " Intellisense engine for neovim
 Plug 'https://github.com/dense-analysis/ale' " Async syntax checker with LSP support
 " Plug 'https://github.com/vim-syntastic/syntastic' " Static syntax checking hacks for vim
 " Plug 'https://github.com/neovim/nvim-lspconfig' " Configurations for the nvim lsp client
 " Plug 'https://github.com/nvim-lua/completion-nvim' " Auto completion framework with built-in LSP
 " Plug 'https://github.com/ervandew/supertab' " Enabled tab for autocompletion
-Plug 'https://github.com/Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Asychronous completion framework for neovim
-" Plug 'https://github.com/Shougo/deoplete-lsp' " LSP completion source for deoplete
-" Plug 'https://github.com/neoclide/coc.nvim' " Intellisense engine for neovim
 Plug 'https://github.com/Chiel92/vim-autoformat' " Autoformatting
-Plug 'https://github.com/sheerun/vim-polyglot' " On demand language pack - contains vim-markdown, rust.vim etc.
-Plug 'https://github.com/dkarter/bullets.vim' " Markdown automated bullets and numbering
-Plug 'https://github.com/jeffkreeftmeijer/vim-numbertoggle' " Smart relative numbers
 Plug 'https://github.com/morhetz/gruvbox' " Gruvbox theme
 call plug#end()
 
@@ -51,6 +60,7 @@ call plug#end()
 autocmd BufWrite * :Autoformat " Format on write using autoformat
 let g:deoplete#enable_at_startup = 1 " Enable deoplete autocompletion files
 call deoplete#custom#source('_', 'max_menu_width', 80)
+"NOTE: If deoplete python3 provider breaks, update pynvim -> check :help provider-python
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:ale_linters = {'rust': ['analyzer']}
 let g:rainbow_active = 1
