@@ -89,3 +89,10 @@
 - [ ] Use dunst for displaying current song instead of using polybar
 - [ ] Add usage and Quick start section to readme of dotfiles
 - [ ] Try specterwm
+- [ ] Fix brace and indentation
+  - [ ] when creating brace creating matching brace only when when space preceding it and in correct filetype
+  - [ ] when creating new line with brace place cursor correctly and put brace on next line
+  - [ ] auto indent to correct indentation when inserting into code
+  - [ ] format to always same lines indentation - consistency
+  - [ ] only continue comment on next line if hitting enter in insert mode, when using "o" don't add comment before inserting. Idea is that you want to have choice of adding comment.
+  - [ ] When autocompleting with ", remove extra "
