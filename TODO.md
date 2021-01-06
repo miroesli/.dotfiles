@@ -96,3 +96,4 @@
   - [ ] format to always same lines indentation - consistency
   - [ ] only continue comment on next line if hitting enter in insert mode, when using "o" don't add comment before inserting. Idea is that you want to have choice of adding comment.
   - [ ] When autocompleting with ", remove extra "
+- [ ] Used xterm or some other TERM when using ssh since backspace works incorrectly
