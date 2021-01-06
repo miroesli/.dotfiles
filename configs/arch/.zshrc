@@ -116,6 +116,8 @@ AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=3'
 
 ## Custom Aliases
 alias startx='startx > $HOME/.Xoutput.log 2>&1' #Save xorg startx log output
+# Force xterm-color on ssh sessions
+alias ssh='TERM=xterm-256color'
 # Pacman
 alias psync='sudo pacman -Syy' #Sync packages
 alias pac='sudo /usr/bin/pacman -S' #Install packages
